@@ -20,22 +20,20 @@ const REGISTER_VOTER_MUTATION = gql`
   }
 `;
 
-export const VoterFormMutation = ({ refetchQueries }) =>
-  <Mutation mutation={REGISTER_VOTER_MUTATION}>
-    {mutate => {
-
-      const registerVoter = voter =>
-        mutate({
-          variables: { voter },
-          refetchQueries,
-        });
-
-      return <VoterForm onSubmitVoter={registerVoter}
-        buttonText="Register Voter" />;
-
-    }}
-  </Mutation>;
+export const VoterFormMutation = ({ refetchQueries }) => {
+    return <Mutation mutation={REGISTER_VOTER_MUTATION}>
+      {mutate => {
+        const registerVoter = widget => {
+          return mutate({
+            variables: { widget },
+            refetchQueries,
+          });
+        };
+        return <VoterForm onSubmitVoter={registerVoter} buttonText="Register Voter" />;
+      }}
+    </Mutation>;
+  };
 
 VoterFormMutation.propTypes = {
-  refetchQueries: PropTypes.array,
+  refetchQueries: PropTypes.array.isRequired,
 };

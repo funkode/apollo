@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 
 export class VoterForm extends React.Component {
 
+  static defaultProps = {
+    buttonText: 'Register Voter',
+  };
+
   static propTypes = {
     onSubmitVoter: PropTypes.func.isRequired,
+    buttonText: PropTypes.string,
   };
   
   constructor(props) {
@@ -13,7 +18,7 @@ export class VoterForm extends React.Component {
   }
 
   getInitialState() {
-    return {
+    return { 
       firstName: '',
       lastName: '',
       address: '',
@@ -32,7 +37,8 @@ export class VoterForm extends React.Component {
     });
   };
 
-  submitVoter = () => {
+  submitVoter = evt => {
+    evt.preventDefault();
     this.props.onSubmitVoter({ ...this.state });
     this.setState(this.getInitialState());
   };
@@ -41,7 +47,7 @@ export class VoterForm extends React.Component {
     return <form>
       <div>
         <label htmlFor="firstname-input">First Name:</label>
-        <input type="text" id="firstname-input" name="firstname" value={this.state.firstName} onChange={this.change} />
+        <input type="text" id="firstname-input" name="firstName" value={this.state.firstName} onChange={this.change} />
       </div>
       <div>
         <label htmlFor="lastName-input">Last Name:</label>
@@ -68,6 +74,7 @@ export class VoterForm extends React.Component {
         <input type="text" id="phone-input" name="phone" value={this.state.phone} onChange={this.change} />
       </div>
       <button type="button" onClick={this.submitVoter}>{this.props.buttonText}</button>
+      
     </form>;
   }
 
