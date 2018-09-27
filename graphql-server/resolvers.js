@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import { pubsub } from './index';
 
 import { VoterData } from './VoterData';
+const VOTER_REGISTERED = 'voterRegistered';
 
 export const resolvers = {
   Query: {
@@ -14,20 +15,20 @@ export const resolvers = {
     voter: (_, { voterId }, { restURL }) => new VoterData(restURL).one(voterId),
   },
   Mutation: {
-    appendVoter: async (_, { voter }, { restURL }) => {
+    registerVoter: async (_, { voter }, { restURL }) => {
       const voterData = new VoterData(restURL);
-      const voterAppended = await voterData.append(voter);
-      pubsub.publish('voterAppended', { voterAppended });
-      return voterAppended;
+      const voterRegistered = await voterData.append(voter);
+      pubsub.publish(VOTER_REGISTERED, { voterRegistered });
+      return voterRegistered;
     },
     replaceVoter: (_, { voter }, { restURL }) => new VoterData(restURL).replace(voter),
     deleteVoter: (_, { voterId }, { restURL }) => new VoterData(restURL).delete(voterId),
     deleteVoters: (_, { voterIds }, { restURL }) => new VoterData(restURL).deleteMany(voterIds),
   },
   Subscription: {
-    voterAppended: {
+    voterRegistered: {
       subscribe: () => {
-        return pubsub.asyncIterator('voterAppended');
+        return pubsub.asyncIterator(VOTER_REGISTERED);
       },
     },
   },

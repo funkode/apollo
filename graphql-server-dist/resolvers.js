@@ -15,6 +15,8 @@ var _VoterData = require('./VoterData');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const VOTER_REGISTERED = 'voterRegistered';
+
 const resolvers = exports.resolvers = {
   Query: {
     myMessage: (_1, _2, { restURL }) => {
@@ -24,20 +26,20 @@ const resolvers = exports.resolvers = {
     voter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).one(voterId)
   },
   Mutation: {
-    appendVoter: async (_, { voter }, { restURL }) => {
+    registerVoter: async (_, { voter }, { restURL }) => {
       const voterData = new _VoterData.VoterData(restURL);
-      const voterAppended = await voterData.append(voter);
-      _index.pubsub.publish('voterAppended', { voterAppended });
-      return voterAppended;
+      const voterRegistered = await voterData.append(voter);
+      _index.pubsub.publish(VOTER_REGISTERED, { voterRegistered });
+      return voterRegistered;
     },
     replaceVoter: (_, { voter }, { restURL }) => new _VoterData.VoterData(restURL).replace(voter),
     deleteVoter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).delete(voterId),
     deleteVoters: (_, { voterIds }, { restURL }) => new _VoterData.VoterData(restURL).deleteMany(voterIds)
   },
   Subscription: {
-    voterAppended: {
+    voterRegistered: {
       subscribe: () => {
-        return _index.pubsub.asyncIterator('voterAppended');
+        return _index.pubsub.asyncIterator(VOTER_REGISTERED);
       }
     }
   }

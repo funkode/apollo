@@ -19,14 +19,14 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
   }
 
   type Mutation {
-    appendVoter(voter: AppendVoter): Voter
+    registerVoter(voter: RegisterVoter): Voter
     replaceVoter(voter: ReplaceVoter): Voter
     deleteVoter(voterId: ID): Voter
     deleteVoters(voterIds: [ID]): [Voter]
   }
 
   type Subscription {
-    voterAppended: Voter
+    voterRegistered: Voter
   }
 
   type Voter {
@@ -40,7 +40,7 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     phone: String
   }
 
-  input AppendVoter {
+  input RegisterVoter {
     firstName: String
     lastName: String
     address: String

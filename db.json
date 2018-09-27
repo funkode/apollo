@@ -449,26 +449,6 @@
       "birthdate": "Sun Dec 14 2014 04:41:48 GMT-0800 (Pacific Standard Time)",
       "email": "brookscantu@suremax.com",
       "phone": "(902) 592-3118"
-    },
-    {
-      "id": 45,
-      "firstName": "Rosella",
-      "lastName": "Ray",
-      "address": "3327 Bushwick Place",
-      "city": "Bradenville",
-      "birthdate": "Mon Jun 28 2004 12:04:29 GMT-0700 (Pacific Daylight Time)",
-      "email": "blevinsfleming@zosis.com",
-      "phone": "(953) 504-3620"
-    },
-    {
-      "id": 46,
-      "firstName": "Newton",
-      "lastName": "Moon",
-      "address": "55059 Carlton Avenue",
-      "city": "Abrams",
-      "birthdate": "Sun May 13 2018 22:50:23 GMT-0700 (Pacific Daylight Time)",
-      "email": "berryberg@macronaut.com",
-      "phone": "(904) 586-3716"
     }
   ]
 }

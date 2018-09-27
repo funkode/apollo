@@ -8,14 +8,14 @@ export const typeDefs = gql`
   }
 
   type Mutation {
-    appendVoter(voter: AppendVoter): Voter
+    registerVoter(voter: RegisterVoter): Voter
     replaceVoter(voter: ReplaceVoter): Voter
     deleteVoter(voterId: ID): Voter
     deleteVoters(voterIds: [ID]): [Voter]
   }
 
   type Subscription {
-    voterAppended: Voter
+    voterRegistered: Voter
   }
 
   type Voter {
@@ -29,7 +29,7 @@ export const typeDefs = gql`
     phone: String
   }
 
-  input AppendVoter {
+  input RegisterVoter {
     firstName: String
     lastName: String
     address: String
