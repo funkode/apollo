@@ -24,10 +24,10 @@ export const App = () => (
               <Route path="/voters" component={Voters} />
             </li>
             <li>
-              <Link to="/vote">Vote</Link>
+              <Link to="/manageelections">Manage Elections</Link>
             </li>
             <li>
-              <Link to="/campaign">Campaign</Link>
+              <Link to="/elections">Elections</Link>
             </li>
           </ul>
         </div>
