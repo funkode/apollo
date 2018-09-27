@@ -2,6 +2,7 @@ import React from 'react';
 import { VOTERS_QUERY } from '../queries/voter/VotersQuery';
 import { VoterTableContainer } from './voter/VoterTableContainer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { CreateElection } from "./election-management/CreateElection";
 
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation' 
 
@@ -19,7 +20,7 @@ export const App = () => (
           <Link to="/register">Register</Link>
         </li>
         <li>
-          <Link to="/vote">Vote</Link>
+          <Link to="/manageElection">Manage Election</Link>
         </li>
         <li>
           <Link to="/campaign">Campaign</Link>
@@ -31,7 +32,7 @@ export const App = () => (
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/register" component={Register} />
-      <Route path="/vote" component={Vote} />
+      <Route path="/manageElection" component={ManageElection} />
       <Route path="/campaign" component={Elections} />
     </div>
   </Router>
@@ -56,9 +57,9 @@ export const Register = () =>
     <VoterFormMutation refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;
 
-export const Vote = () =>
+export const ManageElection = () =>
   <React.Fragment>
-    <h1>Shelley your component goes here...</h1>
+   <CreateElection />
   </React.Fragment>;
   
 export const Elections = () =>
