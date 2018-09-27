@@ -1,8 +1,8 @@
 import { ApolloServer } from 'apollo-server';
 import { PubSub } from 'graphql-subscriptions';
 
-import { typeDefs } from './typeDefs';
-import { resolvers } from './resolvers';
+import { typeDefs } from './captureVotes/captureVotesTypeDefs';
+import { resolvers } from './captureVotes/captureVotesResolvers';
 
 const GRAPHQL_PORT = process.env.PORT || 3010;
 const REST_PORT = process.env.REST_PORT || 3020;

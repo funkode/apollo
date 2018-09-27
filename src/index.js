@@ -10,6 +10,8 @@ import { split, ApolloLink } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
 
 import { withClientState } from 'apollo-link-state';
+import {BrowserRouter,Router, Route,Switch, Link } from "react-router-dom";
+
 import gql from 'graphql-tag';
 
 import { App } from './components/App';
@@ -21,24 +23,26 @@ const cache = new InMemoryCache();
 const clientStateLink = withClientState({
   cache,
   defaults: {
-    toolName: 'Car Tool',
-    editCarId: -1,
+    selectedBallot:{
+      id:-1,
+      name:"",
+      questions:[]
+    }
   },
   resolvers: {
     Mutation: {
-      setEditCarId: (_, { editCarId }, { cache }) => {
-
-        const EDIT_CAR_ID_QUERY = gql`
-          query EditCarIdQuery {
-            editCarId @client
-          }
-        `;
-
-        const data = cache.readQuery({ query: EDIT_CAR_ID_QUERY });
-        data.editCarId = editCarId;
-        cache.writeQuery({ query: EDIT_CAR_ID_QUERY, data });
-      },
-    },
+      setSelectedBallot: (_,{selectedBallot},{cache})=>{
+        const SET_SELECTED_BALLOT = gql`
+					query{
+						selectedBallot
+					}
+				`;
+        const data = cache.readQuery({query: SET_SELECTED_BALLOT});
+        console.log("selectedBallot",selectedBallot);
+        data.selectedBallot=selectedBallot;
+        cache.writeQuery({query:SET_SELECTED_BALLOT,data});
+      }
+    }
   },
 });
 
@@ -66,8 +70,10 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
+  <React.Fragment>
+  <BrowserRouter>
   <ApolloProvider client={client}>
     <App />
-  </ApolloProvider>,
+  </ApolloProvider></BrowserRouter></React.Fragment>,
   document.querySelector('#root'),
 );

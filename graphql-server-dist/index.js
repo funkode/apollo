@@ -9,9 +9,9 @@ var _apolloServer = require('apollo-server');
 
 var _graphqlSubscriptions = require('graphql-subscriptions');
 
-var _typeDefs = require('./typeDefs');
+var _captureVotesTypeDefs = require('./captureVotes/captureVotesTypeDefs');
 
-var _resolvers = require('./resolvers');
+var _captureVotesResolvers = require('./captureVotes/captureVotesResolvers');
 
 const GRAPHQL_PORT = process.env.PORT || 3010;
 const REST_PORT = process.env.REST_PORT || 3020;
@@ -22,8 +22,8 @@ const context = {
 };
 
 const server = new _apolloServer.ApolloServer({
-  typeDefs: _typeDefs.typeDefs,
-  resolvers: _resolvers.resolvers,
+  typeDefs: _captureVotesTypeDefs.typeDefs,
+  resolvers: _captureVotesResolvers.resolvers,
   context
 });
 
