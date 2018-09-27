@@ -1,7 +1,0 @@
-Exercise 19
-
-1. If your GraphQL server does not support a subscription for deleting a car add one. When a car is deleted emit the car via the subscription.
-
-2. Using a single subscription component (in the entire application) and component composition display a message when a new car is added or deleted.
-
-3. Ensure it works...
