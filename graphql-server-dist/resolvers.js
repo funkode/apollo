@@ -11,33 +11,35 @@ var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
 
 var _index = require('./index');
 
-var _CarData = require('./CarData');
+var _VoterData = require('./VoterData');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const VOTER_REGISTERED = 'voterRegistered';
 
 const resolvers = exports.resolvers = {
   Query: {
     myMessage: (_1, _2, { restURL }) => {
       return (0, _nodeFetch2.default)(`${restURL}/message`).then(res => res.json()).then(({ text }) => text);
     },
-    cars: (_1, _2, { restURL }) => new _CarData.CarData(restURL).all(),
-    car: (_, { carId }, { restURL }) => new _CarData.CarData(restURL).one(carId)
+    voters: (_1, _2, { restURL }) => new _VoterData.VoterData(restURL).all(),
+    voter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).one(voterId)
   },
   Mutation: {
-    appendCar: async (_, { car }, { restURL }) => {
-      const carData = new _CarData.CarData(restURL);
-      const carAppended = await carData.append(car);
-      _index.pubsub.publish('carAppended', { carAppended });
-      return carAppended;
+    registerVoter: async (_, { voter }, { restURL }) => {
+      const voterData = new _VoterData.VoterData(restURL);
+      const voterRegistered = await voterData.append(voter);
+      _index.pubsub.publish(VOTER_REGISTERED, { voterRegistered });
+      return voterRegistered;
     },
-    replaceCar: (_, { car }, { restURL }) => new _CarData.CarData(restURL).replace(car),
-    deleteCar: (_, { carId }, { restURL }) => new _CarData.CarData(restURL).delete(carId),
-    deleteCars: (_, { carIds }, { restURL }) => new _CarData.CarData(restURL).deleteMany(carIds)
+    replaceVoter: (_, { voter }, { restURL }) => new _VoterData.VoterData(restURL).replace(voter),
+    deleteVoter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).delete(voterId),
+    deleteVoters: (_, { voterIds }, { restURL }) => new _VoterData.VoterData(restURL).deleteMany(voterIds)
   },
   Subscription: {
-    carAppended: {
+    voterRegistered: {
       subscribe: () => {
-        return _index.pubsub.asyncIterator('carAppended');
+        return _index.pubsub.asyncIterator(VOTER_REGISTERED);
       }
     }
   }

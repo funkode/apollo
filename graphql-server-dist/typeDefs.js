@@ -14,45 +14,51 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const typeDefs = exports.typeDefs = _graphqlTag2.default`
   type Query {
     myMessage: String
-    cars: [Car]
-    car(carId: ID): Car
+    voters: [Voter]
+    voter(voterId: ID): Voter
   }
 
   type Mutation {
-    appendCar(car: AppendCar): Car
-    replaceCar(car: ReplaceCar): Car
-    deleteCar(carId: ID): Car
-    deleteCars(carIds: [ID]): [Car]
+    registerVoter(voter: RegisterVoter): Voter
+    replaceVoter(voter: ReplaceVoter): Voter
+    deleteVoter(voterId: ID): Voter
+    deleteVoters(voterIds: [ID]): [Voter]
   }
 
   type Subscription {
-    carAppended: Car
+    voterRegistered: Voter
   }
 
-  type Car {
+  type Voter {
     id: ID
-    make: String
-    model: String
-    year: Int
-    color: String
-    price: Float
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    birthdate: String
+    email: String
+    phone: String
   }
 
-  input AppendCar {
-    make: String
-    model: String
-    year: Int
-    color: String
-    price: Float
+  input RegisterVoter {
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    birthdate: String
+    email: String
+    phone: String
   }
 
-  input ReplaceCar {
+  input ReplaceVoter {
     id: ID
-    make: String
-    model: String
-    year: Int
-    color: String
-    price: Float
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    birthdate: String
+    email: String
+    phone: String
   }
 
 `;

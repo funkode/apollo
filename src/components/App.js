@@ -1,4 +1,6 @@
 import React from 'react';
+import { VOTERS_QUERY } from '../queries/voter/VotersQuery';
+import { VoterTableContainer } from './voter/VoterTableContainer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation' 
@@ -50,7 +52,8 @@ export const About = () =>
 export const Register = () =>
   <React.Fragment>
     <h1>Be a United States supporter by participating in voting for the election campagins. To get active, please get registered.</h1>
-    <VoterFormMutation refetchQueries={[() => {}]}/>
+    <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
+    <VoterFormMutation refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;
 
 export const Vote = () =>
