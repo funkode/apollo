@@ -6,41 +6,49 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation' 
 
 export const App = () => (
-  <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
-        <li>
-          <Link to="/vote">Vote</Link>
-        </li>
-        <li>
-          <Link to="/campaign">Campaign</Link>
-        </li>
-      </ul>
+  <React.Fragment>
+    <Router>
+      <div id="container" class="container">
+        <div class="header"><h3>Winterland Election Commission</h3></div>
+        <div id="leftColumn" class="leftColumn">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/voters">Voters</Link>
+              <Route path="/voters" component={Voters} />
+            </li>
+            <li>
+              <Link to="/vote">Vote</Link>
+            </li>
+            <li>
+              <Link to="/campaign">Campaign</Link>
+            </li>
+          </ul>
+        </div>
 
-      <hr />
-
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/register" component={Register} />
-      <Route path="/vote" component={Vote} />
-      <Route path="/campaign" component={Elections} />
-    </div>
-  </Router>
+        <div id="rightColumn" class="rightColumn">
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          
+          <Route path="/vote" component={Vote} />
+          <Route path="/campaign" component={Elections} />
+          <Route path="/Register" component={Register} />
+          <Route path="/voterlist" component={VotersList} />
+        </div>
+      </div>
+    </Router>
+  </React.Fragment>
 );
 
 
 export const Home = () =>
   <React.Fragment>
-    <h1>Welcome to Election Commission of United States</h1>
+    <h5>Welcome to The Election Commission of Winterland</h5>
     
   </React.Fragment>;
 
@@ -49,12 +57,30 @@ export const About = () =>
     <h1>The glorious team behind this awesome initiative!</h1>
   </React.Fragment>;
 
+export const Voters = () =>
+  <React.Fragment>
+    <ul>
+      <li>
+        <Link to="/voterlist">VotersList</Link>
+      </li>
+      <li>
+        <Link to="/register">Register</Link>
+      </li>
+    </ul>
+    
+  </React.Fragment>;
+
 export const Register = () =>
   <React.Fragment>
-    <h1>Be a United States supporter by participating in voting for the election campagins. To get active, please get registered.</h1>
-    <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
-    <VoterFormMutation refetchQueries={[{ query: VOTERS_QUERY }]}/>
+    <h1>Be a Winterland supporter by voting for the election ballets. Start making the difference by registering today.</h1>
+   <VoterFormMutation refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;
+
+export const VotersList = () =>
+  <React.Fragment>
+    <h1>Registered voters from Winterland.</h1>
+    <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
+  </React.Fragment>;  
 
 export const Vote = () =>
   <React.Fragment>
