@@ -4,7 +4,30 @@
 
   <head>
     <title>React / Redux / GraphQL / Apollo</title>
-
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: 150px auto;
+        grid-template-rows: 80px auto; 
+        grid-gap: 15px 10px;
+        grid-template-areas: 
+        "header header"
+        "menu content";
+      }
+      .header {
+        grid-area: header;
+        text-align: center;
+        font-size: 1.4rem;
+        background-color: #2196F3;
+      }
+      .leftColumn {
+        grid-area: menu;
+        background-color: rgba(168, 212, 249, 0.954);
+      }
+      .rightColumn {
+        grid-area: content
+      }
+    </style>
   </head>
 
   <body>
