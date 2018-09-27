@@ -2,46 +2,36 @@ import gql from 'graphql-tag';
 
 export const typeDefs = gql`
   type Query {
-    myMessage: String
-    cars: [Car]
-    car(carId: ID): Car
+    voters: [Voter]
   }
 
   type Mutation {
-    appendCar(car: AppendCar): Car
-    replaceCar(car: ReplaceCar): Car
-    deleteCar(carId: ID): Car
-    deleteCars(carIds: [ID]): [Car]
+    registerVoter(voter: RegisterVoter): Voter
   }
 
   type Subscription {
-    carAppended: Car
+    voterRegistered: Voter
   }
 
-  type Car {
+  type Voter {
     id: ID
-    make: String
-    model: String
-    year: Int
-    color: String
-    price: Float
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    birthdate: String
+    email: String
+    phone: String
   }
-
-  input AppendCar {
-    make: String
-    model: String
-    year: Int
-    color: String
-    price: Float
-  }
-
-  input ReplaceCar {
-    id: ID
-    make: String
-    model: String
-    year: Int
-    color: String
-    price: Float
+  
+  input RegisterVoter {
+    firstName: String
+    lastName: String
+    address: String
+    city: String
+    birthdate: String
+    email: String
+    phone: String
   }
 
 `;
