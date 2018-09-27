@@ -2,6 +2,7 @@ import React from 'react';
 import { VOTERS_QUERY } from '../queries/voter/VotersQuery';
 import { VoterTableContainer } from './voter/VoterTableContainer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { CreateElection } from "./election-management/CreateElection";
 
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation' 
 
@@ -35,7 +36,7 @@ export const App = () => (
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           
-          <Route path="/vote" component={Vote} />
+          <Link to="/manageElection">Manage Election</Link>
           <Route path="/campaign" component={Elections} />
           <Route path="/Register" component={Register} />
           <Route path="/voterlist" component={VotersList} />
@@ -72,7 +73,7 @@ export const Voters = () =>
 
 export const Register = () =>
   <React.Fragment>
-    <h1>Be a Winterland supporter by voting for the election ballets. Start making the difference by registering today.</h1>
+    <h5>Be a Winterland supporter by voting for the local elections. Start making the difference by registering today.</h5>
    <VoterFormMutation refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;
 
@@ -82,12 +83,12 @@ export const VotersList = () =>
     <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;  
 
-export const Vote = () =>
+export const ManageElection = () =>
   <React.Fragment>
-    <h1>Shelley your component goes here...</h1>
+   <CreateElection />
   </React.Fragment>;
-  
+
 export const Elections = () =>
   <React.Fragment>
-    <h1>Todd, your component goes in here...</h1>
+    <h5>Todd, your component goes in here...</h5>
   </React.Fragment>;
