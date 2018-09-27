@@ -1,0 +1,19 @@
+Exercise 15
+
+1. Implement redux thunk as appropriate for all asynchronous actions. Remember not all actions are asynchronous. Decide which part of the state is local only and which part is stored on the server. After completing delete, replace, delete selected and insert car actions, refresh the table from the server.
+
+2. Remove all old actions from the reducer.
+
+3. Perform all REST server operations using the fetch API. Check the MDN documentation on how to use fetch.
+
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+4. Use the following conventions for REST services:
+
+Insert/Append: POST method, Collection URL, JSON Request Body
+Replace: PUT method, Element URL, JSON Request Body
+Delete: DELETE method, Element URL, No Request Body
+
+https://en.wikipedia.org/wiki/Representational_state_transfer
+
+https://github.com/typicode/json-server

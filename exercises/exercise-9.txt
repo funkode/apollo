@@ -1,0 +1,16 @@
+Exercise 9
+
+1. Create a parent component that display the header, table of cars, and the car form. The name of the component should be Car Tool.
+
+2. Manage the array of cars inside of the Car Tool component. Do not manage the array of cars outside of the Car Tool. The initial array of cars should be passed into the Car Tool component using props.
+
+3. Within the Car Tool component implement the code needed to display the table of cars using the Car Table component.
+
+4. Within the Car Tool component implement the code needed to handle the output of the Car Form which is then used to update the array of cars.
+
+5. Set the header text for the Tool Header using static text. The value should "Car Tool".
+
+6. Run the application, ensure the table of cars shows the initial cars, and when new cars are submitted they are added to the table.
+
+
+

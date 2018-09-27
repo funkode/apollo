@@ -1,0 +1,9 @@
+Exercise 1
+
+1. Make a copy of the HTML page, and replace it with the content from the following steps.
+
+2. Display the person's name, birthday, three interesting things, where they went to school and their home town. Use the appropriate HTML tags to structure the content.
+
+3. Display their quote or person who inspires them with the appropriate HTML tag.
+
+4. Load the page to make sure everything is displayed.

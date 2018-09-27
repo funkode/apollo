@@ -1,0 +1,13 @@
+Exercise #2
+
+1. Create a component which shows the list of basic info items.
+
+2. Pass into the component an object of the basic info items and properly display the object within the component.
+
+3. Replace the HTML part of your which displays the basic info with the component.
+
+4. Utilize the ToolHeader component for the Page Header.
+
+5. Code all of the components within index.js.
+
+6. Display the page and ensure everything displays correctly.

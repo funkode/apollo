@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+$i: 0px;
+
+@while $i < 100 {
+  $i: $i + 5;
+  .margin-top-#{$i} { margin-top: $i; }
+}

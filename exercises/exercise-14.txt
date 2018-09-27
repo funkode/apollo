@@ -1,0 +1,8 @@
+Exercise 14.
+
+Hint: Change index.js back to the car tool.
+
+1. Update Car Tool to use Redux and React Redux.
+
+2. Ensure it works.
+

@@ -1,0 +1,7 @@
+Exercise #8
+
+1. Implement a button on the car form to add a car to the array of cars.
+
+2. When adding the car calculate the id based upon the cars already in the array. Ensure the is unique.
+
+3. Jump for joy!

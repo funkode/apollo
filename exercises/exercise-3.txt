@@ -1,0 +1,9 @@
+Exercise 3.
+
+1. Update interesting things to be an array of items.
+
+2. Dynamically build the list item elements using the array.
+
+3. Display the interesting things within an ItemList component where the interesting things are passed as props.
+
+4. Ensure it works.

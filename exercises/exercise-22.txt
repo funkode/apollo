@@ -1,0 +1,5 @@
+Exercise #22
+
+1. Refactor Car Query to use a higher order component.
+
+2. Ensure it works.

@@ -1,0 +1,13 @@
+Exercise 11
+
+1. Create a new component named Car Edit Row.
+
+2. Car Edit Row should display a row where you can edit each field. Ensure the fields are populated with that row's widget.
+
+3. The row's last column should have two buttons: Save and Cancel. DO NOT IMPLEMENT SAVE AND CANCEL IN THIS EXERCISE, BUT DISPLAY THE BUTTONS.
+
+4. Add an Edit button to the Car View Row component.
+
+5. When the Edit button is clicked, the Car View Row for that row should be changed to the Car Edit Row.
+
+Note: Only one row is editable at a time. If you click Edit on another row, currently editable row, becomes a Car View Row, and the row clicked on becomes editable. If the Delete button or the Add Car button is clicked all rows are view only.

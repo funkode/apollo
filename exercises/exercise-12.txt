@@ -1,0 +1,11 @@
+Exercise 12
+
+1. Implement the Save and Cancel functions. The Save function should take the data from the form and replace the car in the array of cars. The Cancel function show change the Edit Row to the View Row.
+
+Extra Credit
+
+2. On each row, add a check box. When the check box is clicked track that the row has been selected.
+
+3. At the top of the table, add a Delete button so that when it is clicked, the selected rows are deleted.
+
+4. Ensure everything works.

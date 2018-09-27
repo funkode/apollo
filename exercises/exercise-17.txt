@@ -1,0 +1,10 @@
+Exercise 17
+
+1. Build a component (or set of components) to display a single car.
+
+2. The single car should be displayed as following:
+
+Use an unordered list to display the list of fields of the car which is passed in.
+
+3. Query the GraphQL server for the particular car. It is ok to hard code the id (in the query variables) of the car you are querying. Display the single car view under the table.
+

@@ -1,0 +1,8 @@
+Exercise 6
+
+1. Implement propTypes for Tool Header, Car Table & Car Row.
+
+2. Be as specific as possible in defining the prop types.
+
+3. Ensure everything works.
+

@@ -1,0 +1,11 @@
+Exercise 5.
+
+1. End world hunger.
+
+2. Complete world peace.
+
+3. Move the Car Table to its own file.
+
+4. Move the Car Row to its own file.
+
+Requirement: Do the steps in order.

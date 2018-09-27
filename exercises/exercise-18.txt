@@ -1,0 +1,11 @@
+Exercise 18.
+
+1. Implement the delete operation on the table using a the Mutation component.
+
+2. If your number is even then use refetchQueries to refresh the daya.
+
+3. If your number is odd then use direct cache read/write and optimisticResponse to perform the deletion.
+
+Hint: Queries and Mutations can be nested inside of each other.
+
+4. Ensure it works. Good luck!

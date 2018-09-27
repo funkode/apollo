@@ -1,0 +1,8 @@
+Exercise 7
+
+1. Create a new component named Car Form.
+
+2. Add a field for each car property except for id.
+
+3. Setup the state and related functionality to collect the car data from the form.
+

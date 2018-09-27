@@ -1,0 +1,11 @@
+Exercise 13.
+
+Please code all of it in the same file.
+
+1. Do 10 jumping jacks.
+
+2. Create the Calculator Component displayed on the whiteboard. Name the component CalcTool.
+
+3. Use the Redux code was just wrote to handle the actions dispatched from CalcTool and provide the result to be displayed in CalcTool.
+
+4. Ensure it works!

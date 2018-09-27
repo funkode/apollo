@@ -1,0 +1,9 @@
+Exercise 10
+
+1. Add a new column to the end of the Car Table. Label the column header "Actions".
+
+2. In the Car Row component add a new column at the end. In the last column add a button with a label of "Delete"
+
+3. When the button is clicked, remove the car from the array of cars managed in the car tool. The table should refresh and the car should be gone.
+
+4. Ensure the whole application works.

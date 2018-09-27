@@ -1,0 +1,9 @@
+Exercise 16
+
+1. Implement replace car, delete car and delete cars. For delete cars an array of ids will be passed.
+
+2. For the replace car operation, return the original car.
+
+3. For the delete car operation, return the deleted car.
+
+4. For the delete cars operation, return a list of all of the deleted cars.

@@ -1,0 +1,1 @@
+export { withMessageQuery, MESSAGE_QUERY } from './MessageQuery';

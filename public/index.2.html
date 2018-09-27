@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>React / Redux / GraphQL / Apollo</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+
+      'use strict';
+
+      function doIt() {
+        console.log(this);
+      }
+
+      // doIt();
+
+      // window.doIt();
+
+      const o = {
+        id: 2,
+        doIt: doIt,
+      };
+
+      o.doIt();
+
+      // console.log(o.doIt === doIt);
+
+      // const anotherFn = o.doIt.bind(o);
+
+      
+      function bindFn(fn, context) {
+
+        return function(...params) {
+
+          return fn.call(context, ...params);
+        };
+      }
+
+      const anotherFn = bindFn(o.doIt, o);
+
+      setTimeout(anotherFn, 3000);
+      */
+
+
+    </script>
+  </body>
+
+</html>

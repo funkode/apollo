@@ -1,0 +1,17 @@
+Exercise 4
+
+1. Create an array of car objects. Each car object should have the following properties:
+
+Id: number (1, 2, 3, ...)
+Make: string
+Model: string
+Year: number
+Color: string
+Price: number
+
+2. Create a component that displays a table of cars. Think about the kind of data being displayed and the semantic nature of the display itself and choose the correct HTML tags. Be sure to display all fields.
+
+3. Pass the array of car objects into the car table component. And render the car table component from the call to ReactDOM.render.
+
+4. Ensure everything works...
+
