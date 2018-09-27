@@ -1,5 +1,5 @@
 {
-  "Voters": [
+  "voters": [
     {
       "id": 0,
       "firstName": "Barrera",
@@ -449,6 +449,103 @@
       "birthdate": "Sun Dec 14 2014 04:41:48 GMT-0800 (Pacific Standard Time)",
       "email": "brookscantu@suremax.com",
       "phone": "(902) 592-3118"
+    }
+  ],
+  "ballots": [
+    {
+      "id": 0,
+      "name": "officia",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Cupidatat id aliqua nostrud nostrud."
+        },
+        {
+          "id": 1,
+          "question": "Officia culpa commodo in cupidatat officia reprehenderit cillum aliquip non sit qui sunt laboris."
+        },
+        {
+          "id": 2,
+          "question": "Ex cillum sit labore mollit labore et esse non id nulla dolore est commodo."
+        }
+      ],
+      "voters": []
+    },
+    {
+      "id": 1,
+      "name": "culpa",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Ullamco in dolore occaecat eiusmod amet."
+        },
+        {
+          "id": 1,
+          "question": "Magna ullamco eiusmod est excepteur nulla do."
+        },
+        {
+          "id": 2,
+          "question": "Ut quis consectetur et laborum elit ut ut eu nisi ex adipisicing."
+        }
+      ],
+      "voters": []
+    },
+    {
+      "id": 2,
+      "name": "incididunt",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Et amet reprehenderit cillum sit dolor mollit."
+        },
+        {
+          "id": 1,
+          "question": "Magna mollit tempor cillum aute pariatur excepteur cillum."
+        },
+        {
+          "id": 2,
+          "question": "Fugiat qui dolor et pariatur nulla."
+        }
+      ],
+      "voters": [3,6,4]
+    },
+    {
+      "id": 3,
+      "name": "cupidatat",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Magna nisi reprehenderit laborum anim nostrud."
+        },
+        {
+          "id": 1,
+          "question": "Duis consequat culpa tempor occaecat proident pariatur qui ipsum."
+        },
+        {
+          "id": 2,
+          "question": "Deserunt veniam laborum aliquip adipisicing ex adipisicing exercitation pariatur."
+        }
+      ],
+      "voters": [1,4 ,6]
+    },
+    {
+      "id": 4,
+      "name": "velit",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Incididunt in aliqua velit eu aliqua esse ipsum."
+        },
+        {
+          "id": 1,
+          "question": "Commodo in ad sunt elit ullamco incididunt consectetur adipisicing duis consectetur nostrud et."
+        },
+        {
+          "id": 2,
+          "question": "Velit sint consectetur deserunt adipisicing qui enim adipisicing id irure."
+        }
+      ],
+      "voters": []
     }
   ]
 }
