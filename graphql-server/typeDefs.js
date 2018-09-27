@@ -83,5 +83,4 @@ export const typeDefs = gql`
     id:ID,
      question:String
   }
-
 `;

@@ -10,6 +10,8 @@ import { split, ApolloLink } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
 
 import { withClientState } from 'apollo-link-state';
+import {BrowserRouter,Router, Route,Switch, Link } from "react-router-dom";
+
 import gql from 'graphql-tag';
 
 import { App } from './components/App';
@@ -36,7 +38,12 @@ const clientStateLink = withClientState({
   defaults: {
     toolName: 'Car Tool',
     editVoterId: -1,
-    selectedVoterIds: []
+    selectedVoterIds: [],
+    selectedBallot:{
+      id:-1,
+      name:"",
+      questions:[]
+    }
   },
   resolvers: {
     Mutation: {
@@ -46,6 +53,17 @@ const clientStateLink = withClientState({
       removeSelectedVoterId: updateSelectedVoterId(
         (selectedVoterIds, voterId) => selectedVoterIds.filter(vId => vId !== voterId)
       ),
+      setSelectedBallot: (_,{selectedBallot},{cache})=>{
+        const SET_SELECTED_BALLOT = gql`
+					query{
+						selectedBallot
+					}
+				`;
+        const data = cache.readQuery({query: SET_SELECTED_BALLOT});
+        console.log("selectedBallot",selectedBallot);
+        data.selectedBallot=selectedBallot;
+        cache.writeQuery({query:SET_SELECTED_BALLOT,data});
+      },
     },
   },
 });
@@ -74,8 +92,10 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
+  <React.Fragment>
+  <BrowserRouter>
   <ApolloProvider client={client}>
     <App />
-  </ApolloProvider>,
+  </ApolloProvider></BrowserRouter></React.Fragment>,
   document.querySelector('#root'),
 );

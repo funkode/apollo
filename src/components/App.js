@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { VOTERS_QUERY } from '../queries/voter/VotersQuery';
 import { VoterTableContainer } from './voter/VoterTableContainer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -6,7 +7,16 @@ import { CreateElection } from "./election-management/CreateElection";
 
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation' 
 
+import {BallotSelectionComponent} from './BallotSelectionComponent';
+import {BallotSelectionQuery} from '../queries/BallotSelectionQuery';
+import {LoginFormComponent} from './LoginFormComponent';
+import {LoginMutation} from '../mutations/LoginMutation';
+import {Switch } from "react-router-dom";
+import {BallotVoteComponent} from './BallotVoteComponent';
+import {SelectedBallotQuery} from '../queries/SelectedBallotQuery';
+
 export const App = () => (
+  <React.Fragment>
   <Router>
     <div>
       <ul>
@@ -36,7 +46,19 @@ export const App = () => (
       <Route path="/campaign" component={Elections} />
     </div>
   </Router>
+  <SwitchComponent/>
+  </React.Fragment>
 );
+
+
+
+const SwitchComponent = (history)=> {
+  return<Switch>
+  <Route exact path="/campaign/:ballotId/login" component={LoginMutation}/>
+  <Route exact path="/campaign/ballotSelection" component={BallotSelectionQuery} />
+  <Route path="/campaign/:ballotId/VotePage" component={SelectedBallotQuery}/>
+  </Switch>;
+}
 
 
 export const Home = () =>
@@ -65,4 +87,5 @@ export const ManageElection = () =>
 export const Elections = () =>
   <React.Fragment>
     <h1>Todd, your component goes in here...</h1>
+    <SwitchComponent />
   </React.Fragment>;
