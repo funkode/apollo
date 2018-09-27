@@ -44,7 +44,7 @@ export class VoterForm extends React.Component {
   };
 
   render() {
-    return <form>
+    return <form id="voterForm">
       <div>
         <label htmlFor="firstname-input">First Name:</label>
         <input type="text" id="firstname-input" name="firstName" value={this.state.firstName} onChange={this.change} />
