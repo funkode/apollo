@@ -35,11 +35,10 @@ export const App = () => (
         <div id="rightColumn" class="rightColumn">
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          
-          <Link to="/manageElection">Manage Election</Link>
           <Route path="/campaign" component={Elections} />
           <Route path="/Register" component={Register} />
           <Route path="/voterlist" component={VotersList} />
+          <Route path="/manageelections" component={ManageElection} />
         </div>
       </div>
     </Router>
