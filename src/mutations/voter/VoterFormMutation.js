@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import { VoterForm } from '../../components/voter';
 
 const REGISTER_VOTER_MUTATION = gql`
-  mutation RegisterVoterMutation($voter: RegisterCar) {
+  mutation RegisterVoter($voter: RegisterVoter) {
     registerVoter(voter: $voter) {
       id
       firstName
@@ -23,9 +23,9 @@ const REGISTER_VOTER_MUTATION = gql`
 export const VoterFormMutation = ({ refetchQueries }) => {
     return <Mutation mutation={REGISTER_VOTER_MUTATION}>
       {mutate => {
-        const registerVoter = widget => {
+        const registerVoter = voter => {
           return mutate({
-            variables: { widget },
+            variables: { voter },
             refetchQueries,
           });
         };
