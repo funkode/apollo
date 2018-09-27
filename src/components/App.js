@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { VOTERS_QUERY } from '../queries/voter/VotersQuery';
+import { VoterTableContainer } from './voter/VoterTableContainer'
 
 
 
@@ -7,5 +8,5 @@ import React from 'react';
 
 export const App = () =>
   <React.Fragment>
-    <h1>HERE</h1>
+    <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;

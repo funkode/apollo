@@ -18,26 +18,34 @@ const GRAPHQL_PORT = process.env.REACT_APP_GRAPHQL_PORT;
 
 const cache = new InMemoryCache();
 
+const updateSelectedVoterId = selectedVoterIdFn => (_1, { voterId }, { cache }) => {
+
+  const SELECTED_VOTER_IDS_QUERY = gql`
+    query SelectedVoterIdsQuery {
+      selectedVoterIds
+    }
+  `;
+
+  const query = cache.readQuery({ query: SELECTED_VOTER_IDS_QUERY  });
+  const data = { ...query, selectedVoterIds: selectedVoterIdFn(query.selectedVoterIds, voterId) };
+  cache.writeQuery({ query: SELECTED_VOTER_IDS_QUERY, data });
+};
+
 const clientStateLink = withClientState({
   cache,
   defaults: {
     toolName: 'Car Tool',
-    editCarId: -1,
+    editVoterId: -1,
+    selectedVoterIds: []
   },
   resolvers: {
     Mutation: {
-      setEditCarId: (_, { editCarId }, { cache }) => {
-
-        const EDIT_CAR_ID_QUERY = gql`
-          query EditCarIdQuery {
-            editCarId @client
-          }
-        `;
-
-        const data = cache.readQuery({ query: EDIT_CAR_ID_QUERY });
-        data.editCarId = editCarId;
-        cache.writeQuery({ query: EDIT_CAR_ID_QUERY, data });
-      },
+      addSelectedVoterId: updateSelectedVoterId(
+        (selectedVoterIds, voterId) => selectedVoterIds.concat(voterId)
+      ),
+      removeSelectedVoterId: updateSelectedVoterId(
+        (selectedVoterIds, voterId) => selectedVoterIds.filter(vId => vId !== voterId)
+      ),
     },
   },
 });

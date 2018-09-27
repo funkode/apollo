@@ -11,7 +11,7 @@ var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
 
 var _index = require('./index');
 
-var _CarData = require('./CarData');
+var _VoterData = require('./VoterData');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20,24 +20,24 @@ const resolvers = exports.resolvers = {
     myMessage: (_1, _2, { restURL }) => {
       return (0, _nodeFetch2.default)(`${restURL}/message`).then(res => res.json()).then(({ text }) => text);
     },
-    cars: (_1, _2, { restURL }) => new _CarData.CarData(restURL).all(),
-    car: (_, { carId }, { restURL }) => new _CarData.CarData(restURL).one(carId)
+    voters: (_1, _2, { restURL }) => new _VoterData.VoterData(restURL).all(),
+    voter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).one(voterId)
   },
   Mutation: {
-    appendCar: async (_, { car }, { restURL }) => {
-      const carData = new _CarData.CarData(restURL);
-      const carAppended = await carData.append(car);
-      _index.pubsub.publish('carAppended', { carAppended });
-      return carAppended;
+    appendVoter: async (_, { voter }, { restURL }) => {
+      const voterData = new _VoterData.VoterData(restURL);
+      const voterAppended = await voterData.append(voter);
+      _index.pubsub.publish('voterAppended', { voterAppended });
+      return voterAppended;
     },
-    replaceCar: (_, { car }, { restURL }) => new _CarData.CarData(restURL).replace(car),
-    deleteCar: (_, { carId }, { restURL }) => new _CarData.CarData(restURL).delete(carId),
-    deleteCars: (_, { carIds }, { restURL }) => new _CarData.CarData(restURL).deleteMany(carIds)
+    replaceVoter: (_, { voter }, { restURL }) => new _VoterData.VoterData(restURL).replace(voter),
+    deleteVoter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).delete(voterId),
+    deleteVoters: (_, { voterIds }, { restURL }) => new _VoterData.VoterData(restURL).deleteMany(voterIds)
   },
   Subscription: {
-    carAppended: {
+    voterAppended: {
       subscribe: () => {
-        return _index.pubsub.asyncIterator('carAppended');
+        return _index.pubsub.asyncIterator('voterAppended');
       }
     }
   }
