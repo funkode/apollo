@@ -1,6 +1,0 @@
-Exercise #21
-
-1. Add a button to the View Car Row component which says "Show Car".
-
-2. When the "Show Car" button is clicked for a row, display a Car Details pane either above or below the Car Table
-
