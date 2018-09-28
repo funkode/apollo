@@ -3,7 +3,7 @@ import React from 'react';
 import { VOTERS_QUERY } from '../queries/voter/VotersQuery';
 import { VoterTableContainer } from './voter/VoterTableContainer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { CreateElection } from "./election-management/CreateElection";
+import { ElectionManagement } from "./election-management/ElectionManagement";
 
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation'
 
@@ -99,7 +99,7 @@ export const VotersList = () =>
 
 export const ManageElection = () =>
   <React.Fragment>
-   <CreateElection />
+   <ElectionManagement />
   </React.Fragment>;
 
 export const Elections = () =>

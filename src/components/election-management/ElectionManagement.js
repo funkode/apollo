@@ -2,7 +2,7 @@ import React from 'react';
 
 import {ToolHeader} from './ToolHeader';
 import {CreateElection} from './CreateElection';
-import {withBallotsQuery} from '..queries/ballots/BallotQuery';
+import {withBallotsQuery} from '../../queries/ballots/BallotQuery';
 
 const ElectionContainer = withBallotsQuery(CreateElection);
 

@@ -20,7 +20,7 @@ export const withBallotsQuery = graphql(BALLOTS_QUERY, {
     loading: data.loading,
     errors: data.error,
     ballots: data.allBallots,
-    onRefreshCars: () => {},
+    //onRefreshCars: () => {},
     refetchQueries:[ {query: BALLOTS_QUERY } ],
-  }) 
+  })
 }) ;
