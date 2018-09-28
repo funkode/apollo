@@ -81,4 +81,3 @@ export class CreateElection extends React.Component {
                </form>);
    }
 }
-
