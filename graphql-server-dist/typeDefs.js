@@ -94,5 +94,4 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     id:ID,
      question:String
   }
-
 `;
