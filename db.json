@@ -8,6 +8,59 @@
         "1"
       ],
       "id": 1
+    },
+    {
+      "electionId": "0",
+      "userId": "2",
+      "votes": [
+        "2"
+      ],
+      "id": 2
+    },
+    {
+      "electionId": "0",
+      "userId": "0",
+      "votes": [
+        "1",
+        "2"
+      ],
+      "id": 3
+    },
+    {
+      "electionId": "0",
+      "userId": "0",
+      "votes": [
+        "1",
+        "2"
+      ],
+      "id": 4
+    },
+    {
+      "electionId": "1",
+      "userId": "2",
+      "votes": [
+        "3"
+      ],
+      "id": 5
+    },
+    {
+      "electionId": "0",
+      "userId": "1000",
+      "votes": [
+        "0",
+        "1"
+      ],
+      "id": 6
+    },
+    {
+      "electionId": "0",
+      "userId": "1",
+      "votes": [
+        "0",
+        "1",
+        "2"
+      ],
+      "id": 7
     }
   ],
   "voters": [
@@ -1036,6 +1089,4 @@
       ]
     }
   ]
-
-
 }

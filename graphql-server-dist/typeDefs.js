@@ -19,7 +19,7 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     getElections: [Election]
     getElection(lid:ID): Election
     getBallot: [TypeBallot]
-
+    getBallotsVoted(electionId:ID):[ID]
   }
 
   type Mutation {

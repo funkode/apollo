@@ -50,6 +50,16 @@ const resolvers = exports.resolvers = {
       return (0, _nodeFetch2.default)(`${restURL}/ballots`).then(res => {
         return res.json();
       });
+    },
+    getBallotsVoted(_1, { electionId }, { restURL }) {
+      return (0, _nodeFetch2.default)(`${restURL}/ballots`).then(res => {
+        return res.json();
+      }).then(res => {
+        const result = res.filter(ballot => ballot.electionId == electionId);
+        const idList = result.map(ballot => ballot.userId);
+        console.log(idList);
+        return idList;
+      });
     }
   },
   Mutation: {

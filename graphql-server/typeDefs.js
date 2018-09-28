@@ -8,7 +8,7 @@ export const typeDefs = gql`
     getElections: [Election]
     getElection(lid:ID): Election
     getBallot: [TypeBallot]
-
+    getBallotsVoted(electionId:ID):[ID]
   }
 
   type Mutation {
