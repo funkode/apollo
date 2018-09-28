@@ -65,6 +65,32 @@ const resolvers = exports.resolvers = {
       const electionData = new _ElectionData.ElectionData(restURL);
       const addedElection = await electionData.append(election);
       return addedElection;
+    },
+    createBallot: (_1, { ballot }, { restURL }) => {
+      // const input = {
+      //   id:id,
+      //   electionId:electionId,
+      //   userId:userId,
+      //   votes:votes
+      // }
+      // const input={
+      //   id:Number(ballot.id),
+      //   electionId:Number(ballot.electronId),
+      //   userId:Number(ballot.userId),
+      //   votes:ballot.votes
+      // }
+      console.log(ballot);
+
+      return (0, _nodeFetch2.default)(`${restURL}/ballots/`, {
+        method: 'POST',
+        body: JSON.stringify(ballot),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json()).then(res => {
+        console.log("CREATED BALLOT", res);
+        return true;
+      });
     }
   },
   Subscription: {

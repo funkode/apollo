@@ -2,7 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {BallotVoteComponent} from '../components/BallotVoteComponent';
 import {Query} from 'react-apollo';
-import {VoteCheckListener} from '../components/VoteCheckListener'
+import {SaveBallotMutation} from '../mutations/SaveBallotMutation'
 
 const SELECTED_BALLOT_QUERY= gql`
   query{
@@ -10,7 +10,7 @@ const SELECTED_BALLOT_QUERY= gql`
   }
 `;
 const GET_BALLOT_QUERY = gql`query($lid:ID){
-  getBallot(lid:$lid){
+  getElection(lid:$lid){
     id
     name
     questions {
@@ -41,17 +41,17 @@ export const SelectedBallotQuery= props =><Query query={SELECTED_BALLOT_QUERY} >
            console.log(error);
            return null;
          }
-         console.log("GET_BALLOT_QUERY",data.getBallot.questions);
-         const questions=data.getBallot.questions;
+         console.log("GET_BALLOT_QUERY",data);
+         const questions=data.getElection.questions;
          return <React.Fragment>
-          <VoteCheckListener questions = {questions} {...props}/>
+          <SaveBallotMutation questions = {questions} {...props}/>
          </React.Fragment>
 
        }}
        </Query>
     }
     return <React.Fragment>
-    <VoteCheckListener questions = {questions} {...props}/>
+    <SaveBallotMutation questions = {questions} {...props}/>
     </React.Fragment>
   }}
 </Query>;

@@ -1,4 +1,65 @@
 {
+  "ballots": [
+    {
+      "id": "0",
+      "electionId": 0,
+      "userId": 1000,
+      "answers": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "1",
+      "electionId": "0",
+      "userId": "1",
+      "votes": [
+        2
+      ]
+    },
+    {
+      "id": "3",
+      "electionId": "0",
+      "userId": "2",
+      "votes": [
+        2
+      ]
+    },
+    {
+      "electionId": "0",
+      "userId": "1000",
+      "votes": [
+        0,
+        1
+      ],
+      "id": "n~kbcAI"
+    },
+    {
+      "electionId": "1",
+      "userId": "1000",
+      "votes": [
+        0,
+        2
+      ],
+      "id": "K88Bfbh"
+    },
+    {
+      "electionId": "0",
+      "userId": "2",
+      "votes": [
+        2
+      ],
+      "id": "TYSF2Pq"
+    },
+    {
+      "electionId": "1",
+      "userId": "1000",
+      "votes": [
+        "2"
+      ],
+      "id": "YR5nz3t"
+    }
+  ],
   "voters": [
     {
       "id": 1000,
@@ -556,6 +617,7 @@
       "name": "Shelley's ballot",
       "questions": [
         {
+          "id": 0,
           "question": "q1"
         }
       ],

@@ -26,6 +26,12 @@ export class VoteCheckListener extends React.Component{
 		}
   }
   onVote=()=>{
+    const newArray=this.state.voteYes;
+    this.props.createBallot({
+      electionId: this.props.match.params.ballotId,
+      userId: this.props.match.params.userId,
+      votes: newArray
+    });
     console.log(this.state.voteYes);
     this.setState({
       voteYes: [],
