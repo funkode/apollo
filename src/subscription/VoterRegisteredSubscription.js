@@ -4,9 +4,9 @@ import gql from 'graphql-tag';
 import { SubscriptionInfoNotification } from './SubscriptionInfoNotification';
 
 
-export const VOTER_DELETED_SUBSCRIPTION = gql`
-  subscription VoterDeleted {
-    voterDeleted {
+export const VOTER_REGISTERED_SUBSCRIPTION = gql`
+  subscription VoterRegistered {
+    voterRegistered {
       firstName
       lastName
     }
@@ -14,7 +14,7 @@ export const VOTER_DELETED_SUBSCRIPTION = gql`
 `;
 
 export const VoterRegisteredSubscription = props => {
-  return <SubscriptionInfoNotification subscription={VOTER_DELETED_SUBSCRIPTION} {...props}>
-    {({ voterDeleted: { firstName, lastName } }) => <span>{lastName}, {firstName} removed from Winterland elections!</span>}
+  return <SubscriptionInfoNotification subscription={VOTER_REGISTERED_SUBSCRIPTION} {...props}>
+    {({ voterRegistered: { firstName, lastName } }) => <span>{lastName}, {firstName} registered with Winterland elections!</span>}
   </SubscriptionInfoNotification>;
 };

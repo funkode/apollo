@@ -13,7 +13,7 @@ import {LoginMutation} from '../mutations/LoginMutation';
 import {Switch } from "react-router-dom";
 import {BallotVoteComponent} from './BallotVoteComponent';
 import {SelectedBallotQuery} from '../queries/SelectedBallotQuery';
-import {VoterRegisteredSubscription, VoterReplacedSubscription, VoterDeletedSubscription} from '../subscription';
+import {VoterRegisteredSubscription, VoterReplacedSubscription, VoterDeletedSubscription } from '../subscription';
 
 export const App = () => (
   <React.Fragment>

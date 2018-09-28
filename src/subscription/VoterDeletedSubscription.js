@@ -15,6 +15,6 @@ export const VOTER_DELETED_SUBSCRIPTION = gql`
 
 export const VoterDeletedSubscription = props => {
   return <SubscriptionInfoNotification subscription={VOTER_DELETED_SUBSCRIPTION} {...props}>
-    {({ voterDeleted: { firstName, lastName } }) => <span>{lastName}, {firstName} deleted for Winterland elections!</span>}
+    {({ voterDeleted: { firstName, lastName } }) => <span>{lastName}, {firstName} removed from Winterland elections!</span>}
   </SubscriptionInfoNotification>;
 };
