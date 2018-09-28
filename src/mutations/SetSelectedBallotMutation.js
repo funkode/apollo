@@ -2,7 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 //import {DeleteCheckedCarsMutation} from './DeleteCheckedCarsMutation'
 import {Mutation} from  'react-apollo';
-import {BallotSelectionComponent} from '../components/BallotSelectionComponent';
+import {ElectionSelectionComponent} from '../components/ElectionSelectionComponent';
 
 export const SET_SELECTED_BALLOT_MUTATION= gql `
   mutation SetSelectedBallotMutation($ballot: Ballot){
@@ -19,6 +19,6 @@ export const SetSelectedBallotMutation=(props)=>
        })
       };
       // const cancelCar= ()=> editCarId({id:-1});
-    return <BallotSelectionComponent {...props} setSelectedBallot={setSelectedBallot}/>;
+    return <ElectionSelectionComponent {...props} setSelectedBallot={setSelectedBallot}/>;
   }}
   </Mutation>

@@ -2,9 +2,9 @@ import React from 'react';
 import gql from 'graphql-tag'
 import {Query} from 'react-apollo';
 import {SetSelectedBallotMutation} from '../mutations/SetSelectedBallotMutation';
-const BALLOT_SELECTION_QUERY= gql`
+const ELECTIONS_SELECTION_QUERY= gql`
 query{
-  getBallots{
+  getElections{
     id
     name
     questions{
@@ -15,8 +15,8 @@ query{
   }
 }
 `;
-export const BallotSelectionQuery= (props)=>
-  <Query query={BALLOT_SELECTION_QUERY}>
+export const ElectionSelectionQuery= (props)=>
+  <Query query={ELECTIONS_SELECTION_QUERY}>
     {({data,loading,error}) => {
       if (loading) {
         return null;
@@ -25,9 +25,9 @@ export const BallotSelectionQuery= (props)=>
         console.log(error);
         return null;
       }
-      console.log("data",data.getBallots);
-      const ballotsList=data.getBallots;
-      return <SetSelectedBallotMutation {...props} refetchQueries={[{query: BALLOT_SELECTION_QUERY}]} ballotsList={ballotsList}/>;
+      console.log("data",data);
+      const electionsList=data.getElections;
+      return <SetSelectedBallotMutation {...props} refetchQueries={[{query: ELECTIONS_SELECTION_QUERY}]} ballotsList={electionsList}/>;
 
     }}
   </Query>

@@ -5,9 +5,8 @@ export const typeDefs = gql`
     myMessage: String
     voters: [Voter]
     voter(voterId: ID): Voter
-    getBallots: [Ballot]
-    simpleLogin(cred: Login): Boolean
-    getBallot(lid:ID): Ballot
+    getElections: [Election]
+    getElection(lid:ID): Election
   }
 
   type Mutation {
@@ -15,7 +14,9 @@ export const typeDefs = gql`
     replaceVoter(voter: ReplaceVoter): Voter
     deleteVoter(voterId: ID): Voter
     deleteVoters(voterIds: [ID]): [Voter]
-    simpleLogin(cred: Login): Boolean
+    simpleLogin(cred: Login): LogAuth
+    appendElection(election: InputElection): Election
+
   }
 
   type Subscription {
@@ -67,11 +68,26 @@ export const typeDefs = gql`
     phone: String
   }
 
-  type Ballot{
+  type Election{
     id:ID,
     name: String,
     questions: [Question],
-    voters: [ID]
+  }
+  type Ballot{
+    id:ID,
+    electionId: ID,
+    userId: ID,
+    votes: [Int]
+    questions: [Question]
+  }
+
+  input InputElection {
+    name: String,
+    questions: [InputQuestion]
+  }
+
+  input InputQuestion {
+    question:String
   }
 
   input Login{
@@ -79,6 +95,11 @@ export const typeDefs = gql`
     firstName: String,
     lastName: String,
     email: String
+  }
+
+  type LogAuth{
+    id:ID,
+    authToken:Boolean
   }
 
   type Question{

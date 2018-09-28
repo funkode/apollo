@@ -2,9 +2,9 @@ import React from 'react';
 
 import {ToolHeader} from './ToolHeader';
 import {CreateElection} from './CreateElection';
-import {withBallotsQuery} from '../../queries/ballots/BallotQuery';
+import {withElectionsQuery} from '../../queries/elections/ElectionQuery';
 
-const ElectionContainer = withBallotsQuery(CreateElection);
+const ElectionContainer = withElectionsQuery(CreateElection);
 
 export const ElectionManagement = (props) => {
    return (
@@ -13,4 +13,3 @@ export const ElectionManagement = (props) => {
        <ElectionContainer />
    </div>);
 }
-
