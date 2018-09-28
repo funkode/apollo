@@ -9,6 +9,7 @@ export class CreateElection extends React.Component {
            name: '',
            questions: [],
            question: '',
+           currentQuestionId: 0
        };
    }
 
@@ -23,25 +24,24 @@ export class CreateElection extends React.Component {
    addQuestion = () => {
        this.setState({
            question: '',
-           questions: this.state.questions.concat(this.state.question)
+           questions: this.state.questions.concat({
+               question: this.state.question,
+                id: this.state.currentQuestionId,
+           }),
+           currentQuestionId: this.state.currentQuestionId + 1,
+
        });
    }
 
    listQuestion = (question) => {
-       return <li>{question}</li>;
+       return <li>{question.question}</li>;
    }
 
    addElection = () => {
        // This is for submitting a election. Pass in the name and questions here.
    }
 
-   listElections = () => {
-       return <ElectionsTable elections={this.props.elections} />
-   }
-
    render() {
-       console.log("CREATE ELECTION");
-       console.log(this.props)
        if (this.props.loading) {
            return <h1>"Loading..."</h1>;
        }
@@ -52,12 +52,6 @@ export class CreateElection extends React.Component {
       }
 
            return (<form>
-               <div>
-                   <strong>Existing Elections (To be listed):</strong>
-               </div>
-               <div>   
-                   {this.listElections()}
-               </div>
                <div>
                    <h2>Create a election:</h2>
                </div>
@@ -78,7 +72,12 @@ export class CreateElection extends React.Component {
                    <input type="text" id="question-input" name="question" value={this.state.question} onChange={this.change} /><button type="button" onClick={this.addQuestion}>Add question</button>
                </div>
                <div>
-                   <button type="button" onClick={this.addElection}>Submit</button>
+                   <button type="button" onClick={() => this.props.onAppendElection(
+                       {
+                        questions: this.state.questions,
+                        name: this.state.name,
+                        })
+                   }>Submit</button>
                </div>
                </form>);
    }

@@ -543,43 +543,22 @@
       ]
     },
     {
-      "name": "Shelley's ballot",
+      "name": "Shelley's Election",
       "questions": [
         {
-          "question": "q1"
+          "id": "0",
+          "question": "Goldfish?"
+        },
+        {
+          "id": "1",
+          "question": "asdf"
+        },
+        {
+          "id": "2",
+          "question": "abc"
         }
       ],
       "id": 5
-    },
-    {
-      "name": "Shelley's ballot",
-      "questions": [
-        {
-          "id": "0",
-          "question": "q1"
-        }
-      ],
-      "id": 6
-    },
-    {
-      "name": "Shelley's ballot",
-      "questions": [
-        {
-          "id": "0",
-          "question": "q1"
-        }
-      ],
-      "id": 7
-    },
-    {
-      "name": "Shelley's ballot",
-      "questions": [
-        {
-          "id": "0",
-          "question": "q1"
-        }
-      ],
-      "id": 8
     }
   ]
 }
