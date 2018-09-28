@@ -16,9 +16,9 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     myMessage: String
     voters: [Voter]
     voter(voterId: ID): Voter
-    getBallots: [Ballot]
+    getElections: [Election]
     simpleLogin(cred: Login): Boolean
-    getBallot(lid:ID): Ballot
+    getElection(lid:ID): Election
   }
 
   type Mutation {
@@ -76,11 +76,10 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     phone: String
   }
 
-  type Ballot{
+  type Election{
     id:ID,
     name: String,
-    questions: [Question],
-    voters: [ID]
+    questions: [Question]
   }
 
   input Login{
