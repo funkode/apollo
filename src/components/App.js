@@ -43,6 +43,7 @@ export const App = () => (
       <SwitchComponent />
     </div>
   </Router>
+
   </React.Fragment>
 );
 
@@ -72,12 +73,30 @@ export const About = () =>
     <h1>The glorious team behind this awesome initiative!</h1>
   </React.Fragment>;
 
+export const Voters = () =>
+  <React.Fragment>
+    <ul>
+      <li>
+        <Link to="/voterlist">VotersList</Link>
+      </li>
+      <li>
+        <Link to="/register">Register</Link>
+      </li>
+    </ul>
+    
+  </React.Fragment>;
+
 export const Register = () =>
   <React.Fragment>
-    <h1>Be a United States supporter by participating in voting for the election campagins. To get active, please get registered.</h1>
-    <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
-    <VoterFormMutation refetchQueries={[{ query: VOTERS_QUERY }]}/>
+    <h5>Be a Winterland supporter by voting for the local elections. Start making the difference by registering today.</h5>
+   <VoterFormMutation refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;
+
+export const VotersList = () =>
+  <React.Fragment>
+    <h1>Registered voters from Winterland.</h1>
+    <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
+  </React.Fragment>;  
 
 export const ManageElection = () =>
   <React.Fragment>
@@ -86,6 +105,5 @@ export const ManageElection = () =>
 
 export const Elections = () =>
   <React.Fragment>
-    <h1>Todd, your component goes in here...</h1>
 
   </React.Fragment>;
