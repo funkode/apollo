@@ -15,7 +15,7 @@ export const LoginMutation = (props)=>{
     console.log("Routing to Votes",props);
 
     if(!result.simpleLogin){
-      props.history.push('/'+ props.match.params.ballotId +'/VotePage');
+      props.history.push('/campaign/'+ props.match.params.ballotId +'/VotePage');
     }else{
       //TODO NOTIFICATION
       console.log("BAD LOGIN");

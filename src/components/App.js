@@ -5,7 +5,7 @@ import { VoterTableContainer } from './voter/VoterTableContainer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { CreateElection } from "./election-management/CreateElection";
 
-import {VoterFormMutation} from '../mutations/voter/VoterFormMutation' 
+import {VoterFormMutation} from '../mutations/voter/VoterFormMutation'
 
 import {BallotSelectionComponent} from './BallotSelectionComponent';
 import {BallotSelectionQuery} from '../queries/BallotSelectionQuery';
@@ -33,20 +33,16 @@ export const App = () => (
           <Link to="/manageElection">Manage Election</Link>
         </li>
         <li>
-          <Link to="/campaign">Campaign</Link>
+          <Link to="/campaign/">Campaign</Link>
         </li>
       </ul>
 
       <hr />
 
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/register" component={Register} />
-      <Route path="/manageElection" component={ManageElection} />
-      <Route path="/campaign" component={Elections} />
+
+      <SwitchComponent />
     </div>
   </Router>
-  <SwitchComponent/>
   </React.Fragment>
 );
 
@@ -54,8 +50,12 @@ export const App = () => (
 
 const SwitchComponent = (history)=> {
   return<Switch>
-  <Route exact path="/campaign/:ballotId/login" component={LoginMutation}/>
-  <Route exact path="/campaign/ballotSelection" component={BallotSelectionQuery} />
+  <Route exact path="/" component={Home} />
+  <Route path="/about" component={About} />
+  <Route path="/register" component={Register} />
+  <Route path="/manageElection" component={ManageElection} />
+  <Route exact path="/campaign/" component={BallotSelectionQuery} />
+  <Route path="/campaign/:ballotId/login" component={LoginMutation}/>
   <Route path="/campaign/:ballotId/VotePage" component={SelectedBallotQuery}/>
   </Switch>;
 }
@@ -64,7 +64,7 @@ const SwitchComponent = (history)=> {
 export const Home = () =>
   <React.Fragment>
     <h1>Welcome to Election Commission of United States</h1>
-    
+
   </React.Fragment>;
 
 export const About = () =>
@@ -83,9 +83,9 @@ export const ManageElection = () =>
   <React.Fragment>
    <CreateElection />
   </React.Fragment>;
-  
+
 export const Elections = () =>
   <React.Fragment>
     <h1>Todd, your component goes in here...</h1>
-    <SwitchComponent />
+
   </React.Fragment>;
