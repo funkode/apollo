@@ -1,6 +1,16 @@
 {
   "voters": [
     {
+      "id": 1000,
+      "firstName": "",
+      "lastName": "",
+      "address": "8267 Morgan Avenue",
+      "city": "Dahlen",
+      "birthdate": "Mon Jul 27 1998 09:23:21 GMT-0700 (Pacific Daylight Time)",
+      "email": "",
+      "phone": "(878) 594-3562"
+    },
+    {
       "id": 0,
       "firstName": "Barrera",
       "lastName": "Valdez",

@@ -4,7 +4,11 @@ import {Mutation,Query} from  'react-apollo';
 import {LoginFormComponent} from '../components/LoginFormComponent';
 const LOGIN_MUTATION = gql `
 mutation ($cred:Login){
-  simpleLogin(cred:$cred)
+  simpleLogin(cred:$cred){
+    id
+    authToken
+  }
+
 }
 `;
 
@@ -12,10 +16,10 @@ mutation ($cred:Login){
 
 export const LoginMutation = (props)=>{
   const finishLogin= (result)=>{
-    console.log("Routing to Votes",props);
+    console.log("Routing to Votes",result);
 
-    if(!result.simpleLogin){
-      props.history.push('/campaign/'+ props.match.params.ballotId +'/VotePage');
+    if(result.simpleLogin.authToken){
+      props.history.push('/campaign/'+ props.match.params.ballotId+"/"+result.simpleLogin.id +'/VotePage');
     }else{
       //TODO NOTIFICATION
       console.log("BAD LOGIN");

@@ -6,7 +6,6 @@ export const typeDefs = gql`
     voters: [Voter]
     voter(voterId: ID): Voter
     getElections: [Election]
-    simpleLogin(cred: Login): Boolean
     getElection(lid:ID): Election
   }
 
@@ -15,12 +14,15 @@ export const typeDefs = gql`
     replaceVoter(voter: ReplaceVoter): Voter
     deleteVoter(voterId: ID): Voter
     deleteVoters(voterIds: [ID]): [Voter]
-    simpleLogin(cred: Login): Boolean
+    simpleLogin(cred: Login): LogAuth
     appendElection(election: InputElection): Election
+
   }
 
   type Subscription {
     voterRegistered: Voter
+    voterReplaced: Voter
+    voterDeleted: Voter
   }
 
   type Voter {
@@ -69,6 +71,13 @@ export const typeDefs = gql`
   type Election{
     id:ID,
     name: String,
+    questions: [Question],
+  }
+  type Ballot{
+    id:ID,
+    electionId: ID,
+    userId: ID,
+    votes: [Int]
     questions: [Question]
   }
 
@@ -87,6 +96,11 @@ export const typeDefs = gql`
     firstName: String,
     lastName: String,
     email: String
+  }
+
+  type LogAuth{
+    id:ID,
+    authToken:Boolean
   }
 
   type Question{

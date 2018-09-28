@@ -18,6 +18,8 @@ var _ElectionData = require('./ElectionData');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const VOTER_REGISTERED = 'voterRegistered';
+const VOTER_REPLACED = 'voterReplaced';
+const VOTER_DELETED = 'voterDeleted';
 
 const resolvers = exports.resolvers = {
   Query: {
@@ -35,9 +37,7 @@ const resolvers = exports.resolvers = {
       return (0, _nodeFetch2.default)(`${restURL}/elections`).then(res => {
         return res.json();
       }).then(res => {
-        console.log(res);
         const result = res.filter(c => c.id == lid);
-        console.log(result);
         return result[0];
       });
     }
@@ -55,10 +55,23 @@ const resolvers = exports.resolvers = {
         return false;
       }
       const compareFields = res.id == cred.id && res.firstName === cred.firstName && res.lastName === cred.lastName && res.email === cred.email;
-      return compareFields;
+      return {
+        id: res.id,
+        authToken: compareFields
+      };
     }),
-    replaceVoter: (_, { voter }, { restURL }) => new _VoterData.VoterData(restURL).replace(voter),
-    deleteVoter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).delete(voterId),
+    replaceVoter: async (_, { voter }, { restURL }) => {
+      const voterData = new _VoterData.VoterData(restURL);
+      const voterReplaced = await voterData.replace(voter);
+      _index.pubsub.publish(VOTER_REPLACED, { voterReplaced });
+      return voterReplaced;
+    },
+    deleteVoter: async (_, { voterId }, { restURL }) => {
+      const voterData = new _VoterData.VoterData(restURL);
+      const voterDeleted = await voterData.delete(voterId);
+      _index.pubsub.publish(VOTER_DELETED, { voterDeleted });
+      return voterDeleted;
+    },
     deleteVoters: (_, { voterIds }, { restURL }) => new _VoterData.VoterData(restURL).deleteMany(voterIds),
     appendElection: async (_, { election }, { restURL }) => {
       const electionData = new _ElectionData.ElectionData(restURL);
@@ -70,6 +83,16 @@ const resolvers = exports.resolvers = {
     voterRegistered: {
       subscribe: () => {
         return _index.pubsub.asyncIterator(VOTER_REGISTERED);
+      }
+    },
+    voterReplaced: {
+      subscribe: () => {
+        return _index.pubsub.asyncIterator(VOTER_REPLACED);
+      }
+    },
+    voterDeleted: {
+      subscribe: () => {
+        return _index.pubsub.asyncIterator(VOTER_DELETED);
       }
     }
   }

@@ -17,7 +17,6 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     voters: [Voter]
     voter(voterId: ID): Voter
     getElections: [Election]
-    simpleLogin(cred: Login): Boolean
     getElection(lid:ID): Election
   }
 
@@ -26,12 +25,15 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     replaceVoter(voter: ReplaceVoter): Voter
     deleteVoter(voterId: ID): Voter
     deleteVoters(voterIds: [ID]): [Voter]
-    simpleLogin(cred: Login): Boolean
+    simpleLogin(cred: Login): LogAuth
     appendElection(election: InputElection): Election
+
   }
 
   type Subscription {
     voterRegistered: Voter
+    voterReplaced: Voter
+    voterDeleted: Voter
   }
 
   type Voter {
@@ -80,6 +82,13 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
   type Election{
     id:ID,
     name: String,
+    questions: [Question],
+  }
+  type Ballot{
+    id:ID,
+    electionId: ID,
+    userId: ID,
+    votes: [Int]
     questions: [Question]
   }
 
@@ -98,6 +107,11 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     firstName: String,
     lastName: String,
     email: String
+  }
+
+  type LogAuth{
+    id:ID,
+    authToken:Boolean
   }
 
   type Question{

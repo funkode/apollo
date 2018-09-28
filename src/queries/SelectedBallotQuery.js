@@ -2,6 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {BallotVoteComponent} from '../components/BallotVoteComponent';
 import {Query} from 'react-apollo';
+import {VoteCheckListener} from '../components/VoteCheckListener'
 
 const SELECTED_BALLOT_QUERY= gql`
   query{
@@ -43,14 +44,14 @@ export const SelectedBallotQuery= props =><Query query={SELECTED_BALLOT_QUERY} >
          console.log("GET_BALLOT_QUERY",data.getBallot.questions);
          const questions=data.getBallot.questions;
          return <React.Fragment>
-          <BallotVoteComponent questions = {questions} {...props}/>
+          <VoteCheckListener questions = {questions} {...props}/>
          </React.Fragment>
 
        }}
        </Query>
     }
     return <React.Fragment>
-    <BallotVoteComponent questions = {questions} {...props}/>
+    <VoteCheckListener questions = {questions} {...props}/>
     </React.Fragment>
   }}
 </Query>;

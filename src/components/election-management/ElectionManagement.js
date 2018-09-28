@@ -17,4 +17,3 @@ export const ElectionManagement = (props) => {
        <CreateElectionContainer />
    </div>);
 }
-
