@@ -3,7 +3,7 @@
 <html>
 
   <head>
-    <title>React / Redux / GraphQL / Apollo</title>
+    <title>Winterland Election Commission</title>
     <style>
       .container {
         display: grid;
@@ -14,11 +14,13 @@
         "header header"
         "menu content";
       }
-      .header {
+      .pageHeader {
         grid-area: header;
         text-align: center;
-        font-size: 1.4rem;
         background-color: #2196F3;
+      }
+      .pageHeader h1 {
+        color: white;
       }
       .leftColumn {
         grid-area: menu;
@@ -26,6 +28,7 @@
       }
       .rightColumn {
         grid-area: content;
+        padding-left: 10px;
       }
       #voterForm div label {
         display: inline-block;
