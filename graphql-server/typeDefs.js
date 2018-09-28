@@ -78,6 +78,7 @@ export const typeDefs = gql`
   }
 
   input InputQuestion {
+    id: ID,
     question:String
   }
 

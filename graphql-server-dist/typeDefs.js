@@ -89,6 +89,7 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
   }
 
   input InputQuestion {
+    id: ID,
     question:String
   }
 
