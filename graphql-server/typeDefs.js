@@ -78,7 +78,6 @@ export const typeDefs = gql`
     id:ID,
     electionId: ID,
     userId: ID,
-    votes: [Int]
     questions: [Question]
   }
 

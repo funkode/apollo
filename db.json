@@ -569,6 +569,7 @@
         }
       ],
       "id": 5
+<<<<<<< HEAD
     },
     {
       "name": "Shelley's Election",
@@ -655,6 +656,8 @@
       ],
       "votes": [],
       "id": 10
+=======
+>>>>>>> Fix merge conflicts.
     }
   ]
 }

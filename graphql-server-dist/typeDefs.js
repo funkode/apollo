@@ -89,7 +89,6 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     id:ID,
     electionId: ID,
     userId: ID,
-    votes: [Int]
     questions: [Question]
   }
 
