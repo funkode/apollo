@@ -32,6 +32,8 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
 
   type Subscription {
     voterRegistered: Voter
+    voterReplaced: Voter
+    voterDeleted: Voter
   }
 
   type Voter {
