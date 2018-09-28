@@ -19,30 +19,30 @@ export const App = () => (
   <Router>
   <div id="container" class="container">
         <div class="header"><h3>Winterland Election Commission</h3></div>
-        <div id="leftColumn" class="leftColumn">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/voters">Voters</Link>
-              <Route path="/voters" component={Voters} />
-            </li>
-            <li>
-              <Link to="/manageElection">Manage Elections</Link>
-            </li>
-            <li>
-              <Link to="/campaign">Campaign</Link>
-            </li>
-          </ul>
+          <div id="leftColumn" class="leftColumn">
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/voters">Voters</Link>
+                <Route path="/voters" component={Voters} />
+              </li>
+              <li>
+                <Link to="/manageElection">Manage Elections</Link>
+              </li>
+              <li>
+                <Link to="/campaign/">Campaign</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+          <hr />
+          <SwitchComponent />
         </div>
-        <div>
-        <hr />
-      <SwitchComponent />
-      </div>
       </div>
 
   </Router>
@@ -56,6 +56,7 @@ const SwitchComponent = (history)=> {
   return<Switch>
   <Route exact path="/" component={Home} />
   <Route path="/about" component={About} />
+  <Route path="/voterlist" component={VotersList} />
   <Route path="/register" component={Register} />
   <Route path="/manageElection" component={ManageElection} />
   <Route exact path="/campaign/" component={ElectionSelectionQuery} />
@@ -108,5 +109,4 @@ export const ManageElection = () =>
 
 export const Elections = () =>
   <React.Fragment>
-
   </React.Fragment>;
