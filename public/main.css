@@ -1,0 +1,63 @@
+ul{
+    line-height: 2rem;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 20vh auto;
+    grid-template-rows: 10vh auto;
+    grid-gap: 1px;
+    grid-template-areas:
+    "header header"
+    "menu content";
+  }
+  .pageHeader {
+    grid-area: header;
+    text-align: center;
+    background-color: #2196F3;
+    height: 10vh;
+  }
+  .pageHeader h1 {
+    color: white;
+  }
+  .leftColumn {
+    grid-area: menu;
+    background-color: rgba(168, 212, 249, 0.954);
+    height: 90vh;
+  }
+  .rightColumn {
+    grid-area: content;
+    padding-left: 10px;
+  }
+  #voterForm div label {
+    display: inline-block;
+    width: 90px;
+  }
+
+  #voterForm div {
+    padding:2px;
+  }
+
+  .teamPic {
+    width:540px;
+    margin-top: 20px;
+    display: inherit;
+  }
+  .guideIntro {
+    margin-top: 10px; 
+  }
+  .guidePic {
+    width: 277px;
+    display: inherit;
+    margin-top: 10px;
+  }
+  .aboutContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "leftpanel rightpanel";
+  }
+  .leftPanel {
+    grid-area: leftpanel;
+  }
+  .rightPanel {
+    grid-area: rightpanel;
+  }
