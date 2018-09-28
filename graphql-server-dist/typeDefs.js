@@ -83,6 +83,7 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     id:ID,
     name: String,
     questions: [Question],
+    votes: [ID]
   }
   type Ballot{
     id:ID,
@@ -94,7 +95,8 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
 
   input InputElection {
     name: String,
-    questions: [InputQuestion]
+    questions: [InputQuestion],
+    votes: [ID]
   }
 
   input InputQuestion {

@@ -72,6 +72,7 @@ export const typeDefs = gql`
     id:ID,
     name: String,
     questions: [Question],
+    votes: [ID]
   }
   type Ballot{
     id:ID,
@@ -83,7 +84,8 @@ export const typeDefs = gql`
 
   input InputElection {
     name: String,
-    questions: [InputQuestion]
+    questions: [InputQuestion],
+    votes: [ID]
   }
 
   input InputQuestion {

@@ -76,6 +76,7 @@ export class CreateElection extends React.Component {
                        {
                         questions: this.state.questions,
                         name: this.state.name,
+                        votes: [],
                         })
                    }>Submit</button>
                </div>
