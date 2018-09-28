@@ -1,5 +1,4 @@
 import React from 'react';
-import {Router, Route,Switch, Link } from "react-router-dom";
 
 export const BallotVoteItem = ({checked,questionObject,voteCheckListener}) =>{
   // const link="/"+ballot.id+"/login"

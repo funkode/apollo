@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import {Mutation} from  'react-apollo';
-import {BrowserRouter,Router, Route,Switch, Link,Redirect } from "react-router-dom";
+
 import {VoteCheckListener} from '../components/VoteCheckListener'
 export const SAVE_BALLOT_MUTATION= gql `
   mutation saveBallot($ballot:Ballot){
