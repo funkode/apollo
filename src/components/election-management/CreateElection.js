@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {BallotsTable} from './BallotsTable';
+
 export class CreateElection extends React.Component {
    constructor(props) {
        super(props);
@@ -33,10 +35,27 @@ export class CreateElection extends React.Component {
        // This is for submitting a ballot. Pass in the name and questions here.
    }
 
+   listBallots = () => {
+       return <BallotsTable ballots={this.props.ballots} />
+   }
+
    render() {
+       console.log(this.props)
+       if (this.props.loading) {
+           return <h1>"Loading..."</h1>;
+       }
+
+       if (this.props.errors) {
+        console.log(this.props.errors);
+        return <h1>"An error has occurred"</h1>;
+      }
+
            return (<form>
                <div>
                    <strong>Existing Ballots (To be listed):</strong>
+               </div>
+               <div>   
+                   {this.listBallots()}
                </div>
                <div>
                    <h2>Create a ballot:</h2>
