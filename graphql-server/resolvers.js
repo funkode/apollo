@@ -4,6 +4,8 @@ import { pubsub } from './index';
 import { VoterData } from './VoterData';
 import { ElectionData } from './ElectionData';
 const VOTER_REGISTERED = 'voterRegistered';
+const VOTER_REPLACED = 'voterReplaced';
+const VOTER_DELETED = 'voterDeleted';
 
 export const resolvers = {
   Query: {
@@ -55,14 +57,34 @@ export const resolvers = {
         return compareFields ;
       }
     ),
-    replaceVoter: (_, { voter }, { restURL }) => new VoterData(restURL).replace(voter),
-    deleteVoter: (_, { voterId }, { restURL }) => new VoterData(restURL).delete(voterId),
+    replaceVoter: async (_, { voter }, { restURL }) => {
+      const voterData = new VoterData(restURL);
+      const voterReplaced = await voterData.replace(voter);
+      pubsub.publish(VOTER_REPLACED, { voterReplaced });
+      return voterReplaced;
+    },
+    deleteVoter: async (_, { voterId }, { restURL }) => {
+      const voterData = new VoterData(restURL);
+      const voterDeleted = await voterData.delete(voterId);
+      pubsub.publish(VOTER_DELETED, { voterDeleted });
+      return voterDeleted;
+    },
     deleteVoters: (_, { voterIds }, { restURL }) => new VoterData(restURL).deleteMany(voterIds),
   },
   Subscription: {
     voterRegistered: {
       subscribe: () => {
         return pubsub.asyncIterator(VOTER_REGISTERED);
+      },
+    },
+    voterReplaced: {
+      subscribe: () => {
+        return pubsub.asyncIterator(VOTER_REPLACED);
+      },
+    },
+    voterDeleted: {
+      subscribe: () => {
+        return pubsub.asyncIterator(VOTER_DELETED);
       },
     },
   },
