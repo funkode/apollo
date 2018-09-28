@@ -13,13 +13,14 @@ import {LoginMutation} from '../mutations/LoginMutation';
 import {Switch } from "react-router-dom";
 import {BallotVoteComponent} from './BallotVoteComponent';
 import {SelectedBallotQuery} from '../queries/SelectedBallotQuery';
+import {VoterRegisteredSubscription, VoterReplacedSubscription, VoterDeletedSubscription } from '../subscription';
 
 export const App = () => (
   <React.Fragment>
   <Router>
-  <div id="container" class="container">
-        <div class="header"><h3>Winterland Election Commission</h3></div>
-          <div id="leftColumn" class="leftColumn">
+  <div id="container" className="container">
+        <div id="pageHeader" className="pageHeader"><h1>Winterland Election Commission</h1></div>
+          <div id="leftColumn" className="leftColumn">
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -40,13 +41,14 @@ export const App = () => (
             </ul>
           </div>
           <div>
-          <hr />
           <SwitchComponent />
         </div>
       </div>
 
   </Router>
-
+  <VoterRegisteredSubscription refetchQueries={[{ query: VOTERS_QUERY }]}/>
+  <VoterReplacedSubscription refetchQueries={[{ query: VOTERS_QUERY }]}/>
+  <VoterDeletedSubscription refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>
 );
 
@@ -54,51 +56,52 @@ export const App = () => (
 
 const SwitchComponent = (history)=> {
   return<Switch>
-  <Route exact path="/" component={Home} />
-  <Route path="/about" component={About} />
-  <Route path="/voterlist" component={VotersList} />
-  <Route path="/register" component={Register} />
-  <Route path="/manageElection" component={ManageElection} />
-  <Route exact path="/campaign/" component={ElectionSelectionQuery} />
-  <Route path="/campaign/:ballotId/login" component={LoginMutation}/>
-  <Route path="/campaign/:ballotId/:userId/VotePage" component={SelectedBallotQuery}/>
+    <div className="rightColumn">
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/voterlist" component={VotersList} />
+      <Route path="/register" component={Register} />
+      <Route path="/manageElection" component={ManageElection} />
+      <Route exact path="/campaign/" component={ElectionSelectionQuery} />
+      <Route path="/campaign/:ballotId/login" component={LoginMutation}/>
+      <Route path="/campaign/:ballotId/:userId/VotePage" component={SelectedBallotQuery}/>
+    </div>
   </Switch>;
 }
 
 
 export const Home = () =>
   <React.Fragment>
-    <h1>Welcome to Election Commission of United States</h1>
+    <h3>Welcome to Election Commission of Winterland!</h3>
 
   </React.Fragment>;
 
 export const About = () =>
   <React.Fragment>
-    <h1>The glorious team behind this awesome initiative!</h1>
+    <h3>The glorious team behind this awesome initiative!</h3>
   </React.Fragment>;
 
 export const Voters = () =>
   <React.Fragment>
     <ul>
       <li>
-        <Link to="/voterlist">VotersList</Link>
+        <Link to="/voterlist">Voters List</Link>
       </li>
       <li>
         <Link to="/register">Register</Link>
       </li>
     </ul>
-
-  </React.Fragment>;
+</React.Fragment>;
 
 export const Register = () =>
   <React.Fragment>
-    <h5>Be a Winterland supporter by voting for the local elections. Start making the difference by registering today.</h5>
+    <h3>Be a Winterland supporter by voting for the local elections. Start making the difference by registering today.</h3>
    <VoterFormMutation refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;
 
 export const VotersList = () =>
   <React.Fragment>
-    <h1>Registered voters from Winterland.</h1>
+    <h3>Registered voters from Winterland.</h3>
     <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>;
 

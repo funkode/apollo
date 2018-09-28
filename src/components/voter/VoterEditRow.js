@@ -58,8 +58,8 @@ export class VoterEditRow extends React.Component {
         <input type="text" name="phone" value={this.state.phone} onChange={this.change} />
       </td>
       <td>
-        <button type="button" onClick={this.saveVoter}>Save</button>
-        <button type="button" onClick={this.props.onCancelVoter}>Cancel</button>
+        <button type="button" className="button tableButton" onClick={this.saveVoter}>Save</button>
+        <button type="button" className="button tableButton" onClick={this.props.onCancelVoter}>Cancel</button>
       </td>
     </tr>;
   }

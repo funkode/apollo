@@ -22,6 +22,8 @@ export const typeDefs = gql`
 
   type Subscription {
     voterRegistered: Voter
+    voterReplaced: Voter
+    voterDeleted: Voter
   }
 
   type Voter {
@@ -71,20 +73,24 @@ export const typeDefs = gql`
     id:ID,
     name: String,
     questions: [Question],
+    votes: [ID]
   }
   input Ballot{
     id:ID,
     electionId: ID,
     userId: ID,
     votes: [ID]
+
   }
 
   input InputElection {
     name: String,
-    questions: [InputQuestion]
+    questions: [InputQuestion],
+    votes: [ID]
   }
 
   input InputQuestion {
+    id: ID,
     question:String
   }
 

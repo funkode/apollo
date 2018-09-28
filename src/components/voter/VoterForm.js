@@ -73,7 +73,7 @@ export class VoterForm extends React.Component {
         <label htmlFor="phone-input">Phone:</label>
         <input type="text" id="phone-input" name="phone" value={this.state.phone} onChange={this.change} />
       </div>
-      <button type="button" onClick={this.submitVoter}>{this.props.buttonText}</button>
+      <button type="button" className="button registerButton" onClick={this.submitVoter}>{this.props.buttonText}</button>
       
     </form>;
   }
