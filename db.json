@@ -478,8 +478,7 @@
           "id": 2,
           "question": "Ex cillum sit labore mollit labore et esse non id nulla dolore est commodo."
         }
-      ],
-      "voters": []
+      ]
     },
     {
       "id": 1,
@@ -497,8 +496,7 @@
           "id": 2,
           "question": "Ut quis consectetur et laborum elit ut ut eu nisi ex adipisicing."
         }
-      ],
-      "voters": []
+      ]
     },
     {
       "id": 2,
@@ -516,8 +514,7 @@
           "id": 2,
           "question": "Fugiat qui dolor et pariatur nulla."
         }
-      ],
-      "voters": [3,6,4]
+      ]
     },
     {
       "id": 3,
@@ -535,8 +532,7 @@
           "id": 2,
           "question": "Deserunt veniam laborum aliquip adipisicing ex adipisicing exercitation pariatur."
         }
-      ],
-      "voters": [1,4 ,6]
+      ]
     },
     {
       "id": 4,
@@ -554,8 +550,16 @@
           "id": 2,
           "question": "Velit sint consectetur deserunt adipisicing qui enim adipisicing id irure."
         }
+      ]
+    },
+    {
+      "name": "Shelley's ballot",
+      "questions": [
+        {
+          "question": "q1"
+        }
       ],
-      "voters": []
+      "id": 5
     }
   ]
 }

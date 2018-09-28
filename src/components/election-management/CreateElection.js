@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {BallotsTable} from './BallotsTable';
+import {ElectionsTable} from './ElectionsTable';
 
 export class CreateElection extends React.Component {
    constructor(props) {
@@ -31,8 +31,12 @@ export class CreateElection extends React.Component {
        return <li>{question}</li>;
    }
 
-   addBallot = () => {
-       // This is for submitting a ballot. Pass in the name and questions here.
+   addElection = () => {
+       // This is for submitting a election. Pass in the name and questions here.
+   }
+
+   listElections = () => {
+       return <ElectionsTable elections={this.props.elections} />
    }
 
    listBallots = () => {
@@ -40,6 +44,7 @@ export class CreateElection extends React.Component {
    }
 
    render() {
+       console.log("CREATE ELECTION");
        console.log(this.props)
        if (this.props.loading) {
            return <h1>"Loading..."</h1>;
@@ -52,34 +57,36 @@ export class CreateElection extends React.Component {
 
            return (<form>
                <div>
-                   <strong>Existing Ballots (To be listed):</strong>
+                   <strong>Existing Elections (To be listed):</strong>
                </div>
-               <div>   
+               <div>
+                   {this.listElections()}
+               </div>
+               <div>
                    {this.listBallots()}
                </div>
                <div>
-                   <h2>Create a ballot:</h2>
+                   <h2>Create a election:</h2>
                </div>
                <div>
-                   <label htmlFor="question-input">Ballot Name:</label>
+                   <label htmlFor="question-input">Election Name:</label>
                    <input type="text" id="name-input" name="name" value={this.state.name} onChange={this.change} />
                </div>
                <div>
                </div>
                <div>
-                   <strong>Existing questions for this ballot:</strong>
+                   <strong>Existing questions for this election:</strong>
                    <ul>
                        {this.state.questions.map(question => this.listQuestion(question))}
                    </ul>
                </div>
                <div>
-                   <label htmlFor="question-input">Add ballot question:</label>
+                   <label htmlFor="question-input">Add election question:</label>
                    <input type="text" id="question-input" name="question" value={this.state.question} onChange={this.change} /><button type="button" onClick={this.addQuestion}>Add question</button>
                </div>
                <div>
-                   <button type="button" onClick={this.addBallot}>Submit</button>
+                   <button type="button" onClick={this.addElection}>Submit</button>
                </div>
                </form>);
    }
 }
-

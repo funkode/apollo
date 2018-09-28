@@ -60,7 +60,12 @@ const resolvers = exports.resolvers = {
     }),
     replaceVoter: (_, { voter }, { restURL }) => new _VoterData.VoterData(restURL).replace(voter),
     deleteVoter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).delete(voterId),
-    deleteVoters: (_, { voterIds }, { restURL }) => new _VoterData.VoterData(restURL).deleteMany(voterIds)
+    deleteVoters: (_, { voterIds }, { restURL }) => new _VoterData.VoterData(restURL).deleteMany(voterIds),
+    appendElection: async (_, { election }, { restURL }) => {
+      const electionData = new _ElectionData.ElectionData(restURL);
+      const addedElection = await electionData.append(election);
+      return addedElection;
+    }
   },
   Subscription: {
     voterRegistered: {
