@@ -1,6 +1,5 @@
 import React from 'react';
 import gql from 'graphql-tag';
-import {BallotVoteComponent} from '../components/BallotVoteComponent';
 import {Query} from 'react-apollo';
 import {SaveBallotMutation} from '../mutations/SaveBallotMutation'
 

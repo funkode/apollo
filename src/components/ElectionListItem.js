@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route,Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ElectionListItem = ({ballot,setSelectedBallot}) =>{
   const link="/campaign/"+ballot.id+"/login";
