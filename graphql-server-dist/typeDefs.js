@@ -18,6 +18,8 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     voter(voterId: ID): Voter
     getElections: [Election]
     getElection(lid:ID): Election
+    getBallot: [TypeBallot]
+
   }
 
   type Mutation {
@@ -28,7 +30,6 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     simpleLogin(cred: Login): LogAuth
     appendElection(election: InputElection): Election
     createBallot(ballot: Ballot): Boolean
-
   }
 
   type Subscription {
@@ -91,6 +92,14 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     electionId: ID,
     userId: ID,
     votes: [ID]
+
+  }
+  type TypeBallot{
+    id:ID,
+    electionId: ID,
+    userId: ID,
+    votes: [ID]
+
   }
 
   input InputElection {

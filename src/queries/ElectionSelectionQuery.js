@@ -7,11 +7,6 @@ query{
   getElections{
     id
     name
-    questions{
-      id
-      question
-    }
-    
   }
 }
 `;
@@ -25,8 +20,8 @@ export const ElectionSelectionQuery= (props)=>
         console.log(error);
         return null;
       }
-      console.log("data",data);
-      const electionsList=data.getElections;
+      console.log("data",data.getElections);
+      const electionsList=data.getElections.slice();
       return <SetSelectedBallotMutation {...props} refetchQueries={[{query: ELECTIONS_SELECTION_QUERY}]} ballotsList={electionsList}/>;
 
     }}
