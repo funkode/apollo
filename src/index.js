@@ -10,7 +10,7 @@ import { split, ApolloLink } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
 
 import { withClientState } from 'apollo-link-state';
-import {BrowserRouter,Router, Route,Switch, Link } from "react-router-dom";
+import {BrowserRouter } from "react-router-dom";
 
 import gql from 'graphql-tag';
 

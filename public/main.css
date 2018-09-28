@@ -62,8 +62,7 @@ ul{
     grid-area: rightpanel;
   }
 
-
-.button {
+  .button {
     /*background-color: #2196F3;*/
     background-color: rgba(9, 155, 9, 0.687);
     border: none;
@@ -85,4 +84,25 @@ ul{
   
   .registerButton {
     margin-top: 10px; 
+  }
+
+  .teamLogo {
+    width: 100px;
+    position: absolute;
+    left: 0;
+    opacity: 0.5;
+  }
+  .login-form{
+    max-width: 25%;
+  }
+  .login-row {
+    display: flex;
+    justify-content: flex-start;
+    padding: .5em;
+  }
+  .login-row > label {
+    flex: 1;
+  }
+  .login-row > input {
+    flex: 2;
   }

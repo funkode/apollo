@@ -34,20 +34,20 @@ export class LoginFormComponent extends React.Component{
   render(){
     return <React.Fragment>
 
-    <form>
-      <div>
+    <form  className="login-form">
+      <div className="login-row">
         <label htmlFor = "id">ID</label>
         <input type='number' id='id' value={this.state.id} onChange = {this.change} name="id"/>
       </div>
-      <div>
+      <div className="login-row">
         <label htmlFor = "firstName">First Name</label>
         <input type='text' id='firstName' value={this.state.firstName} onChange = {this.change} name="firstName"/>
       </div>
-      <div>
+      <div className="login-row">
         <label htmlFor = "lastName">Last Name</label>
-        <input type='text' id='lastName' value={this.state.lastName} onChange = {this.change} name="lastName"/>
+        <input type='text' id='lastName' value={this.state.lastName} onChange = {this.change} name="lastName" required/>
       </div>
-      <div>
+      <div className="login-row">
         <label htmlFor = "email">Email</label>
         <input type='text' id='email' value={this.state.email} onChange = {this.change} name="email"/>
       </div>

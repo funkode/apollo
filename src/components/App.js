@@ -4,14 +4,12 @@ import { VOTERS_QUERY } from '../queries/voter/VotersQuery';
 import { VoterTableContainer } from './voter/VoterTableContainer'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ElectionManagement } from "./election-management/ElectionManagement";
-
+import logo from '../images/logo.png';
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation'
 
 import {ElectionSelectionQuery} from '../queries/ElectionSelectionQuery';
-import {LoginFormComponent} from './LoginFormComponent';
 import {LoginMutation} from '../mutations/LoginMutation';
 import {Switch } from "react-router-dom";
-import {BallotVoteComponent} from './BallotVoteComponent';
 import {SelectedBallotQuery} from '../queries/SelectedBallotQuery';
 import {VoterRegisteredSubscription, VoterReplacedSubscription, VoterDeletedSubscription } from '../subscription';
 import {Home} from './HomeComponent';
@@ -21,7 +19,9 @@ export const App = () => (
   <React.Fragment>
   <Router>
   <div id="container" className="container">
-        <div id="pageHeader" className="pageHeader"><h1>Winterland Election Commission</h1></div>
+        <div id="pageHeader" className="pageHeader">
+        <img className="teamLogo" src={logo}/>
+          <h1>Winterland Election Commission</h1></div>
           <div id="leftColumn" className="leftColumn">
             <ul>
               <li>

@@ -1,6 +1,5 @@
 import React from 'react';
 import {BallotVoteItem} from './BallotVoteItem';
-import {Router, Route,Switch, Link } from "react-router-dom";
 export const BallotVoteComponent = (props) =>{
   //console.log("BallotVoteComponent Props",props);
   const questionList = props.questions.map(question=>{
