@@ -13,13 +13,14 @@ import {LoginMutation} from '../mutations/LoginMutation';
 import {Switch } from "react-router-dom";
 import {BallotVoteComponent} from './BallotVoteComponent';
 import {SelectedBallotQuery} from '../queries/SelectedBallotQuery';
+import {VoterRegisteredSubscription, VoterReplacedSubscription, VoterDeletedSubscription } from '../subscription';
 
 export const App = () => (
   <React.Fragment>
   <Router>
-  <div id="container" class="container">
-        <div class="header"><h3>Winterland Election Commission</h3></div>
-          <div id="leftColumn" class="leftColumn">
+  <div id="container" className="container">
+        <div id="header" className="header"><h3>Winterland Election Commission</h3></div>
+          <div id="leftColumn" className="leftColumn">
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -40,13 +41,14 @@ export const App = () => (
             </ul>
           </div>
           <div>
-          <hr />
           <SwitchComponent />
         </div>
       </div>
 
   </Router>
-
+  <VoterRegisteredSubscription refetchQueries={[{ query: VOTERS_QUERY }]}/>
+  <VoterReplacedSubscription refetchQueries={[{ query: VOTERS_QUERY }]}/>
+  <VoterDeletedSubscription refetchQueries={[{ query: VOTERS_QUERY }]}/>
   </React.Fragment>
 );
 
@@ -68,7 +70,7 @@ const SwitchComponent = (history)=> {
 
 export const Home = () =>
   <React.Fragment>
-    <h1>Welcome to Election Commission of United States</h1>
+    <h1>Welcome to Election Commission of Winterland!</h1>
 
   </React.Fragment>;
 

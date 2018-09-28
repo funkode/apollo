@@ -21,6 +21,8 @@ export const typeDefs = gql`
 
   type Subscription {
     voterRegistered: Voter
+    voterReplaced: Voter
+    voterDeleted: Voter
   }
 
   type Voter {

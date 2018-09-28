@@ -7,7 +7,7 @@ export const Notification = ({ children, ...props }) =>
 
 Notification.defaultProps = {
   transitionDuration: 500,
-  showMessageDuration: 1500,
+  showMessageDuration: 3500,
   height: '30px',
 };
 
@@ -68,7 +68,7 @@ const NotificationMessage = ({ show, transitionDuration, height, children, ...pr
 
   const transitionStyles = {
     entering: { opacity: 0, height: 0, },
-    entered: { opacity: 1, height, },
+    entered:  { opacity: 1, height, },
   };
 
   return <Transition appear={true} in={show} timeout={transitionDuration} unmountOnExit={false}>

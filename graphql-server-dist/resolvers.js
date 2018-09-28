@@ -18,6 +18,8 @@ var _ElectionData = require('./ElectionData');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const VOTER_REGISTERED = 'voterRegistered';
+const VOTER_REPLACED = 'voterReplaced';
+const VOTER_DELETED = 'voterDeleted';
 
 const resolvers = exports.resolvers = {
   Query: {
@@ -58,8 +60,18 @@ const resolvers = exports.resolvers = {
         authToken: compareFields
       };
     }),
-    replaceVoter: (_, { voter }, { restURL }) => new _VoterData.VoterData(restURL).replace(voter),
-    deleteVoter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).delete(voterId),
+    replaceVoter: async (_, { voter }, { restURL }) => {
+      const voterData = new _VoterData.VoterData(restURL);
+      const voterReplaced = await voterData.replace(voter);
+      _index.pubsub.publish(VOTER_REPLACED, { voterReplaced });
+      return voterReplaced;
+    },
+    deleteVoter: async (_, { voterId }, { restURL }) => {
+      const voterData = new _VoterData.VoterData(restURL);
+      const voterDeleted = await voterData.delete(voterId);
+      _index.pubsub.publish(VOTER_DELETED, { voterDeleted });
+      return voterDeleted;
+    },
     deleteVoters: (_, { voterIds }, { restURL }) => new _VoterData.VoterData(restURL).deleteMany(voterIds),
     appendElection: async (_, { election }, { restURL }) => {
       const electionData = new _ElectionData.ElectionData(restURL);
@@ -71,6 +83,16 @@ const resolvers = exports.resolvers = {
     voterRegistered: {
       subscribe: () => {
         return _index.pubsub.asyncIterator(VOTER_REGISTERED);
+      }
+    },
+    voterReplaced: {
+      subscribe: () => {
+        return _index.pubsub.asyncIterator(VOTER_REPLACED);
+      }
+    },
+    voterDeleted: {
+      subscribe: () => {
+        return _index.pubsub.asyncIterator(VOTER_DELETED);
       }
     }
   }
