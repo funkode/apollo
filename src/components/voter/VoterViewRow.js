@@ -13,7 +13,7 @@ export const VoterViewRow = ({voter, onDeleteVoter, onEditVoter, voterSelected, 
         <td>{voter.email}</td>
         <td>{voter.phone}</td>
         <td>
-            <button type="button" onClick={() => onEditVoter(voter.id)}>Edit</button>
-            <button type="button" onClick={() => onDeleteVoter(voter.id)}>Delete</button>
+            <button type="button" className="button tableButton" onClick={() => onEditVoter(voter.id)}>Edit</button>
+            <button type="button" className="button tableButton" onClick={() => onDeleteVoter(voter.id)}>Delete</button>
         </td>
     </tr>
