@@ -1,10 +1,10 @@
 import React from 'react';
-import {BallotListItem} from './BallotListItem';
-export const BallotSelectionComponent = (props) =>{
-  const ballotsList = props.ballotsList.map(ballot=><BallotListItem
+import {ElectionListItem} from './ElectionListItem';
+export const ElectionSelectionComponent = (props) =>{
+  const ballotsList = props.ballotsList.map(ballot=><ElectionListItem
                             setSelectedBallot= {props.setSelectedBallot} ballot={ballot}/>)
   return <React.Fragment>
-    <h1>Ballots</h1>
+    <h1>Elections</h1>
     <table>
 		  <thead>
         <tr>
@@ -13,11 +13,12 @@ export const BallotSelectionComponent = (props) =>{
           <th>Vote</th>
         </tr>
       </thead>
-
+      <tbody>
     {ballotsList}
+    </tbody>
     </table>
   </React.Fragment>
 }
-BallotSelectionComponent.defaultProps={
+ElectionSelectionComponent.defaultProps={
   ballotsList:[]
 }

@@ -14,20 +14,18 @@ export const resolvers = {
     },
     voters: (_1, _2, { restURL }) => new VoterData(restURL).all(),
     voter: (_, { voterId }, { restURL }) => new VoterData(restURL).one(voterId),
-    getBallots: (_1, _2, { restURL }) => {
-      return fetch(`${restURL}/ballots`)
+    getElections: (_1, _2, { restURL }) => {
+      return fetch(`${restURL}/elections`)
         .then(res => {
           return res.json();
         });
     },
-    getBallot: (_1, {lid} , {restURL})=>{
-      return fetch(`${restURL}/ballots`)
+    getElection: (_1, {lid} , {restURL})=>{
+      return fetch(`${restURL}/elections`)
         .then(res => {
           return res.json();
         }).then(res=>{
-          console.log(res);
           const result = res.filter(c=> c.id==lid);
-          console.log(result);
           return result[0];
         })
     },
@@ -38,7 +36,7 @@ export const resolvers = {
       const voterRegistered = await voterData.append(voter);
       pubsub.publish(VOTER_REGISTERED, { voterRegistered });
       return voterRegistered;
-    },   
+    },
     simpleLogin:(_1,{cred},{restURL})=>fetch(`${restURL}/voters/`+cred.id)
     .then(
       res=>res.json()
@@ -52,7 +50,10 @@ export const resolvers = {
                             && res.firstName===cred.firstName
                             && res.lastName===cred.lastName
                             && res.email===cred.email;
-        return compareFields ;
+        return {
+                id:res.id,
+                authToken:compareFields
+                };
       }
     ),
     replaceVoter: (_, { voter }, { restURL }) => new VoterData(restURL).replace(voter),
@@ -67,4 +68,3 @@ export const resolvers = {
     },
   },
 };
-

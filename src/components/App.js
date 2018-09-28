@@ -7,8 +7,7 @@ import { CreateElection } from "./election-management/CreateElection";
 
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation'
 
-import {BallotSelectionComponent} from './BallotSelectionComponent';
-import {BallotSelectionQuery} from '../queries/BallotSelectionQuery';
+import {ElectionSelectionQuery} from '../queries/ElectionSelectionQuery';
 import {LoginFormComponent} from './LoginFormComponent';
 import {LoginMutation} from '../mutations/LoginMutation';
 import {Switch } from "react-router-dom";
@@ -55,9 +54,9 @@ const SwitchComponent = (history)=> {
   <Route path="/about" component={About} />
   <Route path="/register" component={Register} />
   <Route path="/manageElection" component={ManageElection} />
-  <Route exact path="/campaign/" component={BallotSelectionQuery} />
+  <Route exact path="/campaign/" component={ElectionSelectionQuery} />
   <Route path="/campaign/:ballotId/login" component={LoginMutation}/>
-  <Route path="/campaign/:ballotId/VotePage" component={SelectedBallotQuery}/>
+  <Route path="/campaign/:ballotId/:userId/VotePage" component={SelectedBallotQuery}/>
   </Switch>;
 }
 
@@ -83,7 +82,7 @@ export const Voters = () =>
         <Link to="/register">Register</Link>
       </li>
     </ul>
-    
+
   </React.Fragment>;
 
 export const Register = () =>
@@ -96,7 +95,7 @@ export const VotersList = () =>
   <React.Fragment>
     <h1>Registered voters from Winterland.</h1>
     <VoterTableContainer refetchQueries={[{ query: VOTERS_QUERY }]}/>
-  </React.Fragment>;  
+  </React.Fragment>;
 
 export const ManageElection = () =>
   <React.Fragment>
