@@ -27,6 +27,7 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     deleteVoter(voterId: ID): Voter
     deleteVoters(voterIds: [ID]): [Voter]
     simpleLogin(cred: Login): Boolean
+    appendElection(election: InputElection): Election
   }
 
   type Subscription {
@@ -80,6 +81,15 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     id:ID,
     name: String,
     questions: [Question]
+  }
+
+  input InputElection {
+    name: String,
+    questions: [InputQuestion]
+  }
+
+  input InputQuestion {
+    question:String
   }
 
   input Login{
