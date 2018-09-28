@@ -18,30 +18,34 @@ import {SelectedBallotQuery} from '../queries/SelectedBallotQuery';
 export const App = () => (
   <React.Fragment>
   <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
-        <li>
-          <Link to="/manageElection">Manage Election</Link>
-        </li>
-        <li>
-          <Link to="/campaign/">Campaign</Link>
-        </li>
-      </ul>
-
-      <hr />
-
-
+  <div id="container" class="container">
+        <div class="header"><h3>Winterland Election Commission</h3></div>
+        <div id="leftColumn" class="leftColumn">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/voters">Voters</Link>
+              <Route path="/voters" component={Voters} />
+            </li>
+            <li>
+              <Link to="/manageElection">Manage Elections</Link>
+            </li>
+            <li>
+              <Link to="/campaign">Campaign</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+        <hr />
       <SwitchComponent />
-    </div>
+      </div>
+      </div>
+
   </Router>
 
   </React.Fragment>
