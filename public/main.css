@@ -61,3 +61,28 @@ ul{
   .rightPanel {
     grid-area: rightpanel;
   }
+
+
+.button {
+    /*background-color: #2196F3;*/
+    background-color: rgba(9, 155, 9, 0.687);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 2px;
+    font-weight: bold;
+  }
+  
+  .tableButton {
+    font-weight: normal;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .registerButton {
+    margin-top: 10px; 
+  }

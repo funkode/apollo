@@ -15,7 +15,7 @@ const toBallotRow = (ballot) => {
 };
 
 export const BallotsTable = (props) => {
-    return <table>
+    return <table className="componentTable">
             <tbody>
             <tr><th>ID</th><th>Name</th><th>View</th></tr>
                 {props.ballots.map(ballot => toBallotRow(ballot))}

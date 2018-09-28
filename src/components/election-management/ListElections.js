@@ -11,7 +11,7 @@ export class ListElections extends React.Component {
         
     toElectionRow = (election) => {
         return (
-            <tr><td>{election.id}</td><td>{election.name}</td><td><button type="button" onClick={() => this.onViewClick(election)}>View</button></td></tr>
+            <tr><td>{election.id}</td><td>{election.name}</td><td><button className="button tableButton" type="button" onClick={() => this.onViewClick(election)}>View</button></td></tr>
         );
     };
 
@@ -57,7 +57,7 @@ export class ListElections extends React.Component {
                 <strong>Elections:</strong>
             </div>
             <div>   
-                <table>
+                <table className="componentTable">
                     <tbody>
                         <tr><th>ID</th><th>Name</th><th>View</th></tr>
                             {this.props.elections.map(election => this.toElectionRow(election))}
