@@ -1,7 +1,5 @@
 import React from 'react'
 
-import {ElectionsTable} from './ElectionsTable';
-
 export class CreateElection extends React.Component {
    constructor(props) {
        super(props);
