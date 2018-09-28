@@ -14,14 +14,14 @@ export const resolvers = {
     },
     voters: (_1, _2, { restURL }) => new VoterData(restURL).all(),
     voter: (_, { voterId }, { restURL }) => new VoterData(restURL).one(voterId),
-    getBallots: (_1, _2, { restURL }) => {
-      return fetch(`${restURL}/ballots`)
+    getElections: (_1, _2, { restURL }) => {
+      return fetch(`${restURL}/elections`)
         .then(res => {
           return res.json();
         });
     },
-    getBallot: (_1, {lid} , {restURL})=>{
-      return fetch(`${restURL}/ballots`)
+    getElection: (_1, {lid} , {restURL})=>{
+      return fetch(`${restURL}/elections`)
         .then(res => {
           return res.json();
         }).then(res=>{

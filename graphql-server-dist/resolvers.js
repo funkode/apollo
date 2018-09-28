@@ -26,13 +26,13 @@ const resolvers = exports.resolvers = {
     },
     voters: (_1, _2, { restURL }) => new _VoterData.VoterData(restURL).all(),
     voter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).one(voterId),
-    getBallots: (_1, _2, { restURL }) => {
-      return (0, _nodeFetch2.default)(`${restURL}/ballots`).then(res => {
+    getElections: (_1, _2, { restURL }) => {
+      return (0, _nodeFetch2.default)(`${restURL}/elections`).then(res => {
         return res.json();
       });
     },
-    getBallot: (_1, { lid }, { restURL }) => {
-      return (0, _nodeFetch2.default)(`${restURL}/ballots`).then(res => {
+    getElection: (_1, { lid }, { restURL }) => {
+      return (0, _nodeFetch2.default)(`${restURL}/elections`).then(res => {
         return res.json();
       }).then(res => {
         console.log(res);

@@ -5,9 +5,9 @@ export const typeDefs = gql`
     myMessage: String
     voters: [Voter]
     voter(voterId: ID): Voter
-    getBallots: [Ballot]
+    getElections: [Election]
     simpleLogin(cred: Login): Boolean
-    getBallot(lid:ID): Ballot
+    getElection(lid:ID): Election
   }
 
   type Mutation {
@@ -65,11 +65,10 @@ export const typeDefs = gql`
     phone: String
   }
 
-  type Ballot{
+  type Election{
     id:ID,
     name: String,
-    questions: [Question],
-    voters: [ID]
+    questions: [Question]
   }
 
   input Login{
