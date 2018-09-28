@@ -1,63 +1,13 @@
 {
   "ballots": [
     {
-      "id": "0",
-      "electionId": 0,
-      "userId": 1000,
-      "answers": [
-        0,
-        2
-      ]
-    },
-    {
-      "id": "1",
-      "electionId": "0",
-      "userId": "1",
-      "votes": [
-        2
-      ]
-    },
-    {
-      "id": "3",
-      "electionId": "0",
-      "userId": "2",
-      "votes": [
-        2
-      ]
-    },
-    {
-      "electionId": "0",
-      "userId": "1000",
-      "votes": [
-        0,
-        1
-      ],
-      "id": "n~kbcAI"
-    },
-    {
       "electionId": "1",
       "userId": "1000",
       "votes": [
-        0,
-        2
+        "0",
+        "1"
       ],
-      "id": "K88Bfbh"
-    },
-    {
-      "electionId": "0",
-      "userId": "2",
-      "votes": [
-        2
-      ],
-      "id": "TYSF2Pq"
-    },
-    {
-      "electionId": "1",
-      "userId": "1000",
-      "votes": [
-        "2"
-      ],
-      "id": "YR5nz3t"
+      "id": 1
     }
   ],
   "voters": [
@@ -525,197 +475,567 @@
   "elections": [
     {
       "id": 0,
-      "name": "officia",
+      "name": "est",
       "questions": [
         {
           "id": 0,
-          "question": "Cupidatat id aliqua nostrud nostrud."
+          "question": "Ea excepteur magna mollit nostrud esse tempor laborum."
         },
         {
           "id": 1,
-          "question": "Officia culpa commodo in cupidatat officia reprehenderit cillum aliquip non sit qui sunt laboris."
+          "question": "Nisi ex sint cupidatat amet excepteur pariatur."
         },
         {
           "id": 2,
-          "question": "Ex cillum sit labore mollit labore et esse non id nulla dolore est commodo."
+          "question": "Exercitation culpa ut occaecat dolore aliquip."
+        },
+        {
+          "id": 3,
+          "question": "Qui mollit aliqua cupidatat aliquip adipisicing cupidatat dolor."
+        },
+        {
+          "id": 4,
+          "question": "Enim voluptate laboris dolor incididunt deserunt fugiat ipsum velit in esse."
         }
       ]
     },
     {
       "id": 1,
-      "name": "culpa",
+      "name": "sit",
       "questions": [
         {
           "id": 0,
-          "question": "Ullamco in dolore occaecat eiusmod amet."
+          "question": "Non velit sit velit sint."
         },
         {
           "id": 1,
-          "question": "Magna ullamco eiusmod est excepteur nulla do."
+          "question": "Aliquip in nisi incididunt deserunt."
         },
         {
           "id": 2,
-          "question": "Ut quis consectetur et laborum elit ut ut eu nisi ex adipisicing."
+          "question": "Est ipsum aute Lorem laborum elit officia aliquip laboris fugiat do esse adipisicing eiusmod."
+        },
+        {
+          "id": 3,
+          "question": "Ipsum voluptate Lorem magna aliqua exercitation."
+        },
+        {
+          "id": 4,
+          "question": "Incididunt consequat mollit et eiusmod adipisicing sint ex eu ullamco irure do quis."
+        },
+        {
+          "id": 5,
+          "question": "Ullamco voluptate nostrud occaecat elit reprehenderit commodo laboris ad sit consectetur id fugiat ullamco aute."
+        },
+        {
+          "id": 6,
+          "question": "Sit excepteur non ea eiusmod consequat commodo exercitation nisi excepteur enim ipsum enim officia."
         }
       ]
     },
     {
       "id": 2,
-      "name": "incididunt",
-      "questions": [
-        {
-          "id": 0,
-          "question": "Et amet reprehenderit cillum sit dolor mollit."
-        },
-        {
-          "id": 1,
-          "question": "Magna mollit tempor cillum aute pariatur excepteur cillum."
-        },
-        {
-          "id": 2,
-          "question": "Fugiat qui dolor et pariatur nulla."
-        }
-      ]
+      "name": "veniam",
+      "questions": []
     },
     {
       "id": 3,
-      "name": "cupidatat",
+      "name": "minim",
       "questions": [
         {
           "id": 0,
-          "question": "Magna nisi reprehenderit laborum anim nostrud."
+          "question": "Nisi laborum adipisicing irure consequat nostrud proident labore id sit nostrud nulla consectetur velit occaecat."
         },
         {
           "id": 1,
-          "question": "Duis consequat culpa tempor occaecat proident pariatur qui ipsum."
+          "question": "Deserunt qui et commodo occaecat incididunt incididunt."
         },
         {
           "id": 2,
-          "question": "Deserunt veniam laborum aliquip adipisicing ex adipisicing exercitation pariatur."
+          "question": "Est non consectetur tempor non elit nulla excepteur dolor et reprehenderit do deserunt elit."
+        },
+        {
+          "id": 3,
+          "question": "Esse consequat nulla reprehenderit nulla mollit ipsum excepteur commodo adipisicing non consectetur."
+        },
+        {
+          "id": 4,
+          "question": "In laboris dolor velit ipsum ut voluptate aliquip sit culpa duis ex amet non occaecat."
+        },
+        {
+          "id": 5,
+          "question": "Duis cupidatat id fugiat culpa eu et deserunt laboris nulla excepteur cupidatat."
+        },
+        {
+          "id": 6,
+          "question": "Ex quis laborum ut ut cillum consequat deserunt est culpa dolore occaecat velit."
+        },
+        {
+          "id": 7,
+          "question": "Aliquip id ad esse cupidatat id aliqua consectetur incididunt anim."
+        },
+        {
+          "id": 8,
+          "question": "Dolor labore excepteur officia et sit."
+        },
+        {
+          "id": 9,
+          "question": "Labore culpa dolore nostrud enim."
         }
       ]
     },
     {
       "id": 4,
-      "name": "velit",
+      "name": "mollit",
       "questions": [
         {
           "id": 0,
-          "question": "Incididunt in aliqua velit eu aliqua esse ipsum."
+          "question": "Ipsum officia ut Lorem adipisicing nostrud."
         },
         {
           "id": 1,
-          "question": "Commodo in ad sunt elit ullamco incididunt consectetur adipisicing duis consectetur nostrud et."
+          "question": "Lorem proident voluptate aliquip reprehenderit do ea amet ex in culpa."
         },
         {
           "id": 2,
-          "question": "Velit sint consectetur deserunt adipisicing qui enim adipisicing id irure."
+          "question": "Non ipsum culpa culpa anim excepteur elit non."
+        },
+        {
+          "id": 3,
+          "question": "Voluptate quis eiusmod reprehenderit mollit sint quis labore do proident sunt."
+        },
+        {
+          "id": 4,
+          "question": "Incididunt minim quis velit nulla dolore mollit cillum aliquip duis commodo dolor laborum nostrud eu."
+        },
+        {
+          "id": 5,
+          "question": "Ad id aliqua excepteur qui exercitation id deserunt non nulla officia ullamco."
+        },
+        {
+          "id": 6,
+          "question": "Deserunt tempor velit aliqua laboris in commodo enim commodo aliqua cupidatat cillum dolor."
+        },
+        {
+          "id": 7,
+          "question": "Lorem nulla enim incididunt pariatur Lorem minim."
+        },
+        {
+          "id": 8,
+          "question": "Sint ipsum cillum mollit cillum."
         }
       ]
     },
     {
-      "name": "Shelley's Election",
-      "questions": [
-        {
-          "id": "0",
-          "question": "Goldfish?"
-        },
-        {
-          "id": "1",
-          "question": "asdf"
-        },
-        {
-          "id": "2",
-          "question": "abc"
-        }
-      ],
-      "id": 5
+      "id": 5,
+      "name": "ad",
+      "questions": []
     },
     {
-      "name": "Shelley's Election",
+      "id": 6,
+      "name": "nulla",
       "questions": [
         {
-          "id": "0",
-          "question": "a"
+          "id": 0,
+          "question": "Fugiat proident voluptate officia ipsum esse laborum sint eiusmod ipsum pariatur elit nulla amet."
         },
         {
-          "id": "1",
-          "question": "b"
+          "id": 1,
+          "question": "Consectetur proident sint culpa mollit enim nisi cupidatat eiusmod officia Lorem tempor."
         },
         {
-          "id": "2",
-          "question": "c"
-        },
-        {
-          "id": "3",
-          "question": "d"
+          "id": 2,
+          "question": "Aliqua deserunt amet anim esse voluptate anim magna incididunt est duis tempor eu."
         }
-      ],
-      "id": 6
+      ]
     },
     {
-      "name": "Shelley's ballot",
+      "id": 7,
+      "name": "magna",
       "questions": [
         {
-          "id": "0",
-          "question": "q1"
+          "id": 0,
+          "question": "Eu nulla amet culpa cupidatat consequat enim aute labore deserunt fugiat excepteur."
+        },
+        {
+          "id": 1,
+          "question": "Ullamco nulla excepteur deserunt sunt."
+        },
+        {
+          "id": 2,
+          "question": "Excepteur deserunt veniam est est consectetur."
+        },
+        {
+          "id": 3,
+          "question": "Velit fugiat fugiat incididunt eiusmod esse id irure proident reprehenderit fugiat ullamco aliquip nulla."
+        },
+        {
+          "id": 4,
+          "question": "Nostrud pariatur aute dolore magna ad consectetur consectetur adipisicing pariatur culpa est anim excepteur labore."
+        },
+        {
+          "id": 5,
+          "question": "Anim cillum magna fugiat et dolore quis qui excepteur."
         }
-      ],
-      "votes": [],
-      "id": 7
+      ]
     },
     {
-      "name": "Shelley's ballot",
+      "id": 8,
+      "name": "fugiat",
       "questions": [
         {
-          "id": "2",
-          "question": "abc"
+          "id": 0,
+          "question": "Eu pariatur commodo anim ea quis dolor adipisicing commodo eu officia."
+        },
+        {
+          "id": 1,
+          "question": "Laborum voluptate eu tempor cupidatat nostrud."
+        },
+        {
+          "id": 2,
+          "question": "Voluptate cillum excepteur aliqua duis irure et."
+        },
+        {
+          "id": 3,
+          "question": "Incididunt excepteur aute commodo officia nisi culpa fugiat proident in."
+        },
+        {
+          "id": 4,
+          "question": "Commodo ullamco nulla Lorem voluptate Lorem elit aliqua ut cillum id sint tempor cupidatat consequat."
         }
-      ],
-      "votes": [],
-      "id": 8
+      ]
     },
     {
-      "name": "Dominic's Ballot",
+      "id": 9,
+      "name": "irure",
       "questions": [
         {
-          "id": "0",
-          "question": "a"
+          "id": 0,
+          "question": "Occaecat dolore ad sit occaecat sint magna."
         },
         {
-          "id": "1",
-          "question": "b"
+          "id": 1,
+          "question": "Laboris velit minim ex nostrud quis deserunt commodo nisi nulla do aliquip aute labore qui."
         },
         {
-          "id": "2",
-          "question": "c"
+          "id": 2,
+          "question": "Proident commodo culpa consectetur voluptate culpa pariatur officia pariatur labore aute est laborum aliqua."
         },
         {
-          "id": "3",
-          "question": "d"
+          "id": 3,
+          "question": "Velit commodo id ea eu officia."
         }
-      ],
-      "votes": [],
-      "id": 9
+      ]
     },
     {
-      "name": "Shelley",
+      "id": 10,
+      "name": "occaecat",
       "questions": [
         {
-          "id": "0",
-          "question": "a"
+          "id": 0,
+          "question": "Exercitation tempor cupidatat laboris et reprehenderit culpa."
         },
         {
-          "id": "1",
-          "question": "b"
+          "id": 1,
+          "question": "Fugiat id exercitation aliqua amet est incididunt officia officia eiusmod elit laboris ex et do."
         },
         {
-          "id": "2",
-          "question": "c"
+          "id": 2,
+          "question": "Ipsum commodo consectetur qui cupidatat minim deserunt."
+        },
+        {
+          "id": 3,
+          "question": "Esse enim voluptate dolor qui eiusmod ea voluptate amet."
+        },
+        {
+          "id": 4,
+          "question": "Aute dolore do consequat cillum exercitation elit incididunt nisi dolore mollit ad Lorem."
+        },
+        {
+          "id": 5,
+          "question": "Anim ullamco enim minim fugiat nisi culpa minim eu."
+        },
+        {
+          "id": 6,
+          "question": "Minim id esse do velit consectetur labore."
+        },
+        {
+          "id": 7,
+          "question": "Incididunt id magna ipsum dolor sint occaecat labore ipsum aliqua dolore dolor eu pariatur in."
+        },
+        {
+          "id": 8,
+          "question": "Reprehenderit enim nulla tempor irure cupidatat."
         }
-      ],
-      "votes": [],
-      "id": 10
+      ]
+    },
+    {
+      "id": 11,
+      "name": "eiusmod",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Laborum duis pariatur laborum enim ullamco sit."
+        },
+        {
+          "id": 1,
+          "question": "Commodo laboris ad labore enim laboris est."
+        },
+        {
+          "id": 2,
+          "question": "Ea et sit cupidatat cillum veniam commodo."
+        },
+        {
+          "id": 3,
+          "question": "Esse enim Lorem aliquip irure cupidatat fugiat aliquip dolore reprehenderit."
+        },
+        {
+          "id": 4,
+          "question": "Aliqua nulla proident sit nostrud sit commodo anim aliqua excepteur eu sit eiusmod reprehenderit nostrud."
+        },
+        {
+          "id": 5,
+          "question": "Dolor et enim do ullamco proident sit anim aliqua culpa."
+        },
+        {
+          "id": 6,
+          "question": "Laboris non adipisicing in adipisicing dolor cillum exercitation."
+        },
+        {
+          "id": 7,
+          "question": "Minim mollit pariatur ipsum nulla tempor dolor labore ex tempor mollit."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "amet",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Nisi enim enim excepteur eiusmod proident do elit esse elit tempor."
+        },
+        {
+          "id": 1,
+          "question": "Exercitation quis fugiat nostrud aliquip."
+        },
+        {
+          "id": 2,
+          "question": "Incididunt labore sint veniam elit aute sint nulla veniam minim esse."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "esse",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Amet cupidatat fugiat nostrud laborum eiusmod magna irure ex amet."
+        },
+        {
+          "id": 1,
+          "question": "Magna aute officia non ullamco aliquip non magna cupidatat laborum qui fugiat et aliquip."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "proident",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Do amet mollit irure ex minim sunt pariatur officia ullamco dolor ut."
+        },
+        {
+          "id": 1,
+          "question": "Eiusmod id incididunt deserunt cupidatat."
+        },
+        {
+          "id": 2,
+          "question": "Irure qui anim dolor laborum."
+        },
+        {
+          "id": 3,
+          "question": "Veniam do incididunt laborum dolor dolor qui tempor velit."
+        },
+        {
+          "id": 4,
+          "question": "Proident id pariatur nulla irure quis pariatur fugiat adipisicing consequat enim sunt id."
+        },
+        {
+          "id": 5,
+          "question": "Commodo incididunt consequat minim ut consequat id excepteur exercitation commodo minim laboris aliquip fugiat."
+        },
+        {
+          "id": 6,
+          "question": "Anim excepteur pariatur aliquip dolor nostrud sit ut."
+        },
+        {
+          "id": 7,
+          "question": "Minim labore aute id officia consequat enim ut quis Lorem."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "magna",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Voluptate aliquip sunt nulla duis cupidatat dolor irure mollit cillum consectetur nulla ipsum sit cillum."
+        },
+        {
+          "id": 1,
+          "question": "Irure ullamco exercitation est do id quis nostrud tempor deserunt nisi consectetur."
+        },
+        {
+          "id": 2,
+          "question": "Velit eiusmod irure nulla eu nisi nostrud pariatur sunt dolore velit ad."
+        },
+        {
+          "id": 3,
+          "question": "In reprehenderit cupidatat sunt duis aliqua laborum culpa velit dolore officia adipisicing."
+        },
+        {
+          "id": 4,
+          "question": "Officia ipsum eu culpa magna."
+        },
+        {
+          "id": 5,
+          "question": "Aliqua culpa in et aute mollit est ut non ipsum."
+        },
+        {
+          "id": 6,
+          "question": "Anim exercitation aliquip cillum amet."
+        },
+        {
+          "id": 7,
+          "question": "Aliqua culpa in eiusmod nisi labore."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "ipsum",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Id consectetur labore quis eu minim aliquip ipsum velit."
+        },
+        {
+          "id": 1,
+          "question": "Id magna eiusmod cillum occaecat id in eu et irure nostrud."
+        },
+        {
+          "id": 2,
+          "question": "Commodo fugiat in sint enim mollit aute fugiat cillum proident exercitation Lorem mollit labore duis."
+        },
+        {
+          "id": 3,
+          "question": "Commodo nisi Lorem officia est aliqua ex Lorem nulla occaecat mollit."
+        },
+        {
+          "id": 4,
+          "question": "Velit do occaecat incididunt id nostrud ipsum tempor elit quis ut est."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "incididunt",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Irure dolore cupidatat est consectetur culpa veniam in minim ipsum ullamco cupidatat pariatur qui."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "mollit",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Esse sint qui consequat consequat enim consectetur non esse est commodo consequat aliqua velit dolore."
+        },
+        {
+          "id": 1,
+          "question": "Laboris labore ipsum culpa occaecat pariatur."
+        },
+        {
+          "id": 2,
+          "question": "Excepteur esse irure esse consequat incididunt nulla tempor quis nulla labore veniam anim."
+        },
+        {
+          "id": 3,
+          "question": "Quis do et ipsum tempor aliquip."
+        },
+        {
+          "id": 4,
+          "question": "Amet consectetur voluptate occaecat nisi Lorem."
+        },
+        {
+          "id": 5,
+          "question": "Velit tempor aute officia consequat exercitation minim mollit minim fugiat."
+        },
+        {
+          "id": 6,
+          "question": "Esse quis esse eu quis nostrud esse dolore cupidatat esse laborum enim amet."
+        },
+        {
+          "id": 7,
+          "question": "Excepteur qui officia ut non laborum sunt sint in commodo anim cupidatat tempor."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "deserunt",
+      "questions": [
+        {
+          "id": 0,
+          "question": "Anim anim minim non non duis anim proident."
+        },
+        {
+          "id": 1,
+          "question": "Officia quis ipsum irure magna incididunt elit fugiat officia dolor ad Lorem ad commodo."
+        },
+        {
+          "id": 2,
+          "question": "Consequat ipsum officia culpa occaecat deserunt do eu veniam ipsum ad."
+        },
+        {
+          "id": 3,
+          "question": "Laboris ex sit pariatur qui magna culpa."
+        },
+        {
+          "id": 4,
+          "question": "Officia minim proident non elit anim quis Lorem sunt aliqua officia incididunt ea enim non."
+        },
+        {
+          "id": 5,
+          "question": "Quis ipsum cupidatat ullamco fugiat aliqua."
+        },
+        {
+          "id": 6,
+          "question": "Nisi dolore exercitation culpa ex nisi ipsum minim incididunt ea mollit."
+        },
+        {
+          "id": 7,
+          "question": "Fugiat magna deserunt id consectetur magna magna cupidatat occaecat."
+        },
+        {
+          "id": 8,
+          "question": "Veniam nostrud eiusmod mollit voluptate amet consectetur elit."
+        },
+        {
+          "id": 9,
+          "question": "Proident eu pariatur irure quis duis exercitation dolor eiusmod minim."
+        }
+      ]
     }
   ]
+
+
 }

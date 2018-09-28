@@ -1,8 +1,10 @@
 import React from 'react';
 import {ElectionListItem} from './ElectionListItem';
 export const ElectionSelectionComponent = (props) =>{
+  console.log(props);
   const ballotsList = props.ballotsList.map(ballot=><ElectionListItem
                             setSelectedBallot= {props.setSelectedBallot} ballot={ballot}/>)
+
   return <React.Fragment>
     <h1>Elections</h1>
     <table>

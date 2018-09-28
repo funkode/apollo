@@ -7,6 +7,8 @@ export const typeDefs = gql`
     voter(voterId: ID): Voter
     getElections: [Election]
     getElection(lid:ID): Election
+    getBallot: [TypeBallot]
+
   }
 
   type Mutation {
@@ -17,7 +19,6 @@ export const typeDefs = gql`
     simpleLogin(cred: Login): LogAuth
     appendElection(election: InputElection): Election
     createBallot(ballot: Ballot): Boolean
-
   }
 
   type Subscription {
@@ -76,6 +77,13 @@ export const typeDefs = gql`
     votes: [ID]
   }
   input Ballot{
+    id:ID,
+    electionId: ID,
+    userId: ID,
+    votes: [ID]
+
+  }
+  type TypeBallot{
     id:ID,
     electionId: ID,
     userId: ID,

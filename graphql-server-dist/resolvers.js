@@ -29,7 +29,12 @@ const resolvers = exports.resolvers = {
     voters: (_1, _2, { restURL }) => new _VoterData.VoterData(restURL).all(),
     voter: (_, { voterId }, { restURL }) => new _VoterData.VoterData(restURL).one(voterId),
     getElections: (_1, _2, { restURL }) => {
-      return (0, _nodeFetch2.default)(`${restURL}/elections`).then(res => {
+      return (0, _nodeFetch2.default)(`${restURL}/elections`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(res => {
         return res.json();
       });
     },
@@ -39,6 +44,11 @@ const resolvers = exports.resolvers = {
       }).then(res => {
         const result = res.filter(c => c.id == lid);
         return result[0];
+      });
+    },
+    getBallot(_1, _2, { restURL }) {
+      return (0, _nodeFetch2.default)(`${restURL}/ballots`).then(res => {
+        return res.json();
       });
     }
   },

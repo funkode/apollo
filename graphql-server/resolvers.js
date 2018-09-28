@@ -17,7 +17,13 @@ export const resolvers = {
     voters: (_1, _2, { restURL }) => new VoterData(restURL).all(),
     voter: (_, { voterId }, { restURL }) => new VoterData(restURL).one(voterId),
     getElections: (_1, _2, { restURL }) => {
-      return fetch(`${restURL}/elections`)
+      return fetch(`${restURL}/elections`,
+        {
+          method:'GET',
+          headers:{
+            'Content-Type': 'application/json'
+          }
+        })
         .then(res => {
           return res.json();
         });
@@ -31,6 +37,12 @@ export const resolvers = {
           return result[0];
         })
     },
+    getBallot(_1,_2,{restURL}){
+      return fetch(`${restURL}/ballots`)
+        .then(res => {
+          return res.json();
+        });
+    }
   },
   Mutation: {
     registerVoter: async (_, { voter }, { restURL }) => {
