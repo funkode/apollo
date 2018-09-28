@@ -61,6 +61,18 @@
         "2"
       ],
       "id": 7
+    },
+    {
+      "electionId": "2",
+      "userId": "1000",
+      "votes": [],
+      "id": 8
+    },
+    {
+      "electionId": "4",
+      "userId": "1000",
+      "votes": [],
+      "id": 9
     }
   ],
   "voters": [

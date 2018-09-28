@@ -36,8 +36,12 @@ export const LoginMutation = (props)=>{
         console.log("compare",result.simpleLogin.id,data.getBallotsVoted,data.getBallotsVoted.includes(result.simpleLogin.id));
         if(result.simpleLogin.authToken && !data.getBallotsVoted.includes(result.simpleLogin.id)){
           props.history.push('/campaign/'+ props.match.params.ballotId+"/"+result.simpleLogin.id +'/VotePage');
-        }else{
+        }else if(data.getBallotsVoted.includes(result.simpleLogin.id)){
+          alert("You've Already Voted In This Election");
+        }
+        else{
           //TODO NOTIFICATION
+          alert("Please Enter Correct Details");
           console.log("BAD LOGIN");
         }
 

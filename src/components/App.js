@@ -8,10 +8,8 @@ import { ElectionManagement } from "./election-management/ElectionManagement";
 import {VoterFormMutation} from '../mutations/voter/VoterFormMutation'
 
 import {ElectionSelectionQuery} from '../queries/ElectionSelectionQuery';
-import {LoginFormComponent} from './LoginFormComponent';
 import {LoginMutation} from '../mutations/LoginMutation';
 import {Switch } from "react-router-dom";
-import {BallotVoteComponent} from './BallotVoteComponent';
 import {SelectedBallotQuery} from '../queries/SelectedBallotQuery';
 import {VoterRegisteredSubscription, VoterReplacedSubscription, VoterDeletedSubscription } from '../subscription';
 
