@@ -28,7 +28,7 @@ export const App = () => (
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/voters">Voters</Link>
+                <Link to="/voters/register">Voters</Link>
                 <Route path="/voters" component={Voters} />
               </li>
               <li>
@@ -60,8 +60,8 @@ const SwitchComponent = (history)=> {
   return<Switch>
     <div className="rightColumn">
       <Route exact path="/" component={Home} />
-      <Route path="/voterlist" component={VotersList} />
-      <Route path="/register" component={Register} />
+      <Route path="/voters/voterlist" component={VotersList} />
+      <Route path="/voters/register" component={Register} />
       <Route path="/manageElection" component={ManageElection} />
       <Route exact path="/campaign/" component={ElectionSelectionQuery} />
       <Route path="/campaign/:ballotId/login" component={LoginMutation}/>

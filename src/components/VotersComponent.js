@@ -5,10 +5,10 @@ export const Voters = () =>
   <React.Fragment>
     <ul>
       <li>
-        <Link to="/voterlist">Voters List</Link>
+        <Link to="/voters/voterlist">Voters List</Link>
       </li>
       <li>
-        <Link to="/register">Register</Link>
+        <Link to="/voters/register">Register</Link>
       </li>
     </ul>
 </React.Fragment>;
