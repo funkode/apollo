@@ -19,7 +19,5 @@ export const withElectionsQuery = graphql(ELECTION_QUERY, {
     loading: data.loading,
     errors: data.error,
     elections: data.allElections,
-    //onRefreshCars: () => {},
-    refetchQueries:[ {query: ELECTION_QUERY } ],
   })
 }) ;
