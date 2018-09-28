@@ -44,6 +44,7 @@ export const resolvers = {
         });
     },
     getBallotsVoted(_1,{electionId},{restURL}){
+      console.log(electionId);
       return fetch(`${restURL}/ballots`)
         .then(res => {
           return res.json();

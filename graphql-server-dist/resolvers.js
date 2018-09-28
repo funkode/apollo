@@ -52,6 +52,7 @@ const resolvers = exports.resolvers = {
       });
     },
     getBallotsVoted(_1, { electionId }, { restURL }) {
+      console.log(electionId);
       return (0, _nodeFetch2.default)(`${restURL}/ballots`).then(res => {
         return res.json();
       }).then(res => {

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {BallotsQuery} from '../../queries/ballots/BallotQuery';
+
 export class ListElections extends React.Component {
     constructor(props) {
         super(props);
@@ -27,14 +29,40 @@ export class ListElections extends React.Component {
         });
     }
 
+    getBallots = () => {
+        return <BallotsQuery />;
+    }
+
+    getNumberOfYes = (questionId, ballotElections) => {
+        return ballotElections.map(ballot => ballot.votes).filter(votes => votes.includes(questionId)).length;
+    }
+
+    toQuestionRow = (question, totalBallotCount, ballotElections) => {
+        const numberOfYes = this.getNumberOfYes(question.id, ballotElections);
+        return <tr>
+            <td>{question.question}</td><td>{numberOfYes}</td><td>{totalBallotCount - numberOfYes}</td>
+        </tr>;
+
+    }
+
     viewElectionInfo = () => {
         const selectedElection = this.props.elections.filter(election => election.id === this.state.selectedElectionId)[0];
+        const ballotElections = this.props.ballots.filter(ballot => ballot.electionId === this.state.selectedElectionId);
+        const totalBallotCount = ballotElections.length;
+        console.log(this.getNumberOfYes("0", ballotElections))
+        console.log("Total ballot count: ", totalBallotCount);
+        console.log("Elections: ", this.props.elections);
+        console.log("Ballots:", ballotElections);
         return <div>
             <div>Election Name: {selectedElection.name}</div>
             <div>Questions:</div>
-            <div><ul>
-                    {selectedElection.questions.map(question => <li>{question.question}</li>)}
-                </ul>
+            <div>Total Number of ballots: {totalBallotCount}</div>
+            <div><table>
+                <tbody>
+                    <tr><th>Question</th><th>Yes</th><th>No</th></tr>
+                    {selectedElection.questions.map(question => this.toQuestionRow(question, totalBallotCount, ballotElections))}
+                </tbody>
+                </table>
             </div>
             <div>
                 <button type="button" onClick={this.onCancel}>Cancel</button>
@@ -70,3 +98,8 @@ export class ListElections extends React.Component {
         }
     }
 }
+
+ListElections.defaultProps = {
+    elections: [],
+    ballots: [],
+};
