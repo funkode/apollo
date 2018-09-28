@@ -7,7 +7,7 @@ export const ElectionSelectionComponent = (props) =>{
 
   return <React.Fragment>
     <h1>Elections</h1>
-    <table>
+    <table className="componentTable">
 		  <thead>
         <tr>
           <th>Id</th>

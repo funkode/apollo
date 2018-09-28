@@ -14,7 +14,7 @@ $table-header-border: 1px solid #FFF;
 
 // The voterTable mixin
 
-@mixin voterTable(
+@mixin componentTable(
   $breakpoint: $table-breakpoint,
   $background-color: $table-background-color,
   $text-color: $table-text-color,
@@ -26,7 +26,7 @@ $table-header-border: 1px solid #FFF;
   $header-text-color: $table-text-color,
   $header-border: $table-cell-border) {
   
-  .voterTable {
+  .componentTable {
     margin: 1em 0;
     width: 100%;
     overflow: hidden;  
@@ -94,7 +94,7 @@ $table-header-border: 1px solid #FFF;
 
 // Include the mixin (with extra options as overrides)
 
-@include voterTable(
+@include componentTable(
   $border-radius: $table-border-radius,
   $highlight-color: $table-highlight-color,
   $header-background-color: $table-header-background-color,
@@ -115,29 +115,4 @@ h1 {
   font-weight: normal;
   color: #024457;
   span {color: #167F92;}
-}
-
-
-.button {
-  /*background-color: #2196F3;*/
-  background-color: rgba(9, 155, 9, 0.687);
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 2px;
-  font-weight: bold;
-}
-
-.tableButton {
-  font-weight: normal;
-  padding: 5px;
-  margin: 5px;
-}
-
-.registerButton {
-  margin-top: 10px; 
 }
