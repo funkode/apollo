@@ -18,6 +18,8 @@ ul{
   }
   .pageHeader h1 {
     color: white;
+    margin-top: 2.2vh;
+    font-weight: bolder;
   }
   .leftColumn {
     grid-area: menu;
@@ -87,10 +89,11 @@ ul{
   }
 
   .teamLogo {
-    width: 100px;
+    width: 12vh;
     position: absolute;
     left: 0;
     opacity: 0.5;
+    margin-left: 10px;
   }
   .login-form{
     max-width: 25%;
