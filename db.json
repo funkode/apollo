@@ -553,13 +553,111 @@
       ]
     },
     {
-      "name": "Shelley's ballot",
+      "name": "Shelley's Election",
       "questions": [
         {
-          "question": "q1"
+          "id": "0",
+          "question": "Goldfish?"
+        },
+        {
+          "id": "1",
+          "question": "asdf"
+        },
+        {
+          "id": "2",
+          "question": "abc"
         }
       ],
       "id": 5
+<<<<<<< HEAD
+    },
+    {
+      "name": "Shelley's Election",
+      "questions": [
+        {
+          "id": "0",
+          "question": "a"
+        },
+        {
+          "id": "1",
+          "question": "b"
+        },
+        {
+          "id": "2",
+          "question": "c"
+        },
+        {
+          "id": "3",
+          "question": "d"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "Shelley's ballot",
+      "questions": [
+        {
+          "id": "0",
+          "question": "q1"
+        }
+      ],
+      "votes": [],
+      "id": 7
+    },
+    {
+      "name": "Shelley's ballot",
+      "questions": [
+        {
+          "id": "2",
+          "question": "abc"
+        }
+      ],
+      "votes": [],
+      "id": 8
+    },
+    {
+      "name": "Dominic's Ballot",
+      "questions": [
+        {
+          "id": "0",
+          "question": "a"
+        },
+        {
+          "id": "1",
+          "question": "b"
+        },
+        {
+          "id": "2",
+          "question": "c"
+        },
+        {
+          "id": "3",
+          "question": "d"
+        }
+      ],
+      "votes": [],
+      "id": 9
+    },
+    {
+      "name": "Shelley",
+      "questions": [
+        {
+          "id": "0",
+          "question": "a"
+        },
+        {
+          "id": "1",
+          "question": "b"
+        },
+        {
+          "id": "2",
+          "question": "c"
+        }
+      ],
+      "votes": [],
+      "id": 10
+=======
+>>>>>>> Fix merge conflicts.
     }
   ]
 }
