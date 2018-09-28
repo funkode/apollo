@@ -39,9 +39,6 @@ export class CreateElection extends React.Component {
        return <ElectionsTable elections={this.props.elections} />
    }
 
-   listBallots = () => {
-       return <BallotsTable ballots={this.props.ballots} />
-   }
 
    render() {
        console.log("CREATE ELECTION");
@@ -62,9 +59,7 @@ export class CreateElection extends React.Component {
                <div>
                    {this.listElections()}
                </div>
-               <div>
-                   {this.listBallots()}
-               </div>
+
                <div>
                    <h2>Create a election:</h2>
                </div>
