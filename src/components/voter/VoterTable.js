@@ -2,7 +2,7 @@ import React from 'react';
 import { VoterViewRow } from './VoterViewRow';
 import { VoterEditRow } from './VoterEditRow';
 
-import './VoterTable.css';
+import '../styles/ComponentTable.css';
 
 export const VoterTable  = ({
     loading, error, voters, editVoterId, selectedVoterIds, onAddSelectedVoterId, onRemoveSelectedVoterId,
@@ -29,7 +29,7 @@ export const VoterTable  = ({
 
     return <React.Fragment>
             <button type="button" className="button deleteButton" onClick={() => onDeleteSelectedVoters(selectedVoterIds)}>Delete Selected</button>
-            <table className="voterTable">
+            <table className="componentTable">
                 <thead>
                     <tr>
                         <th>Select Voter</th>

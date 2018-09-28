@@ -70,7 +70,7 @@ export class CreateElection extends React.Component {
                    <input type="text" id="question-input" name="question" value={this.state.question} onChange={this.change} /><button type="button" onClick={this.addQuestion}>Add question</button>
                </div>
                <div>
-                   <button type="button" onClick={() => this.props.onAppendElection(
+                   <button type="button" className="button" onClick={() => this.props.onAppendElection(
                        {
                         questions: this.state.questions,
                         name: this.state.name,

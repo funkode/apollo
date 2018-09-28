@@ -6,7 +6,7 @@ export const ElectionListItem = ({ballot,setSelectedBallot}) =>{
   return <tr>
     <td>{ballot.id}</td>
     <td>{ballot.name}</td>
-    <Link to={link}><button onClick={()=> setSelectedBallot(ballot)}> Vote </button></Link>
+    <Link to={link}><button className="button tableButton" onClick={()=> setSelectedBallot(ballot)}> Vote </button></Link>
   </tr>
 
 }
