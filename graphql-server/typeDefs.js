@@ -16,6 +16,7 @@ export const typeDefs = gql`
     deleteVoters(voterIds: [ID]): [Voter]
     simpleLogin(cred: Login): LogAuth
     appendElection(election: InputElection): Election
+    createBallot(ballot: Ballot): Boolean
 
   }
 
@@ -74,11 +75,12 @@ export const typeDefs = gql`
     questions: [Question],
     votes: [ID]
   }
-  type Ballot{
+  input Ballot{
     id:ID,
     electionId: ID,
     userId: ID,
-    questions: [Question]
+    votes: [ID]
+
   }
 
   input InputElection {

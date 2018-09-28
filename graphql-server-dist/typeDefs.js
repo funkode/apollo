@@ -27,6 +27,7 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     deleteVoters(voterIds: [ID]): [Voter]
     simpleLogin(cred: Login): LogAuth
     appendElection(election: InputElection): Election
+    createBallot(ballot: Ballot): Boolean
 
   }
 
@@ -85,11 +86,11 @@ const typeDefs = exports.typeDefs = _graphqlTag2.default`
     questions: [Question],
     votes: [ID]
   }
-  type Ballot{
+  input Ballot{
     id:ID,
     electionId: ID,
     userId: ID,
-    questions: [Question]
+    votes: [ID]
   }
 
   input InputElection {
